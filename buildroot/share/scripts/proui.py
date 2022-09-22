@@ -2,7 +2,7 @@
 # VSCode script for the Professional Firmware
 # URL: https://github.com/mriscoc/Marlin_Ender3v2/releases
 # Version: 1.4
-# Date: 2022/05/27
+# Date: 2022/08/21
 # Author: Miguel Risco-Castillo
 # ------------------------------------------------------------------------------
 
@@ -26,6 +26,7 @@ marlin_ubl = _GetMarlinEnv(MarlinEnv, 'AUTO_BED_LEVELING_UBL')
 stm32f1 = _GetMarlinEnv(MarlinEnv, 'MCU_STM32F1')
 stm32f4 = _GetMarlinEnv(MarlinEnv, 'MCU_STM32F4')
 stm32g0 = _GetMarlinEnv(MarlinEnv, 'MCU_STM32G0')
+gd32f10 = _GetMarlinEnv(MarlinEnv, 'MAPLE_STM32F1')
 
 if (stm32f1):
    arch = 'stm32f1/'
@@ -36,6 +37,9 @@ elif (stm32f4):
 elif (stm32g0):
    arch = 'stm32g0/'
    print ('STM32G0 Architecture detected')
+elif (gd32f10):
+   arch = 'gd32f10/'
+   print ('GD32F1 Architecture detected')
 else:
    print("Error: can't detect the correct architecture")
    exit()
