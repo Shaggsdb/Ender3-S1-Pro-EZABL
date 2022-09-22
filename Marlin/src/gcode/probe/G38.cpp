@@ -28,7 +28,11 @@
 
 #include "../../module/endstops.h"
 #include "../../module/motion.h"
+<<<<<<< HEAD
 #include "../../module/planner.h"
+=======
+#include "../../module/stepper.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #include "../../module/probe.h"
 
 inline void G38_single_probe(const uint8_t move_value) {

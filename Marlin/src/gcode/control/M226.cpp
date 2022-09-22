@@ -26,7 +26,11 @@
 
 #include "../gcode.h"
 #include "../../MarlinCore.h" // for pin_is_protected and idle()
+<<<<<<< HEAD
 #include "../../module/planner.h"
+=======
+#include "../../module/stepper.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 void protected_pin_err();
 

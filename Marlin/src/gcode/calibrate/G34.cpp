@@ -26,12 +26,18 @@
 
 #include "../gcode.h"
 #include "../../module/motion.h"
+<<<<<<< HEAD
 #include "../../module/endstops.h"
 
 #if ANY(HAS_MOTOR_CURRENT_SPI, HAS_MOTOR_CURRENT_PWM, HAS_TRINAMIC_CONFIG)
   #include "../../module/stepper.h"
 #endif
 
+=======
+#include "../../module/stepper.h"
+#include "../../module/endstops.h"
+
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #if HAS_LEVELING
   #include "../../feature/bedlevel/bedlevel.h"
 #endif

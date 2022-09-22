@@ -25,6 +25,11 @@
 
 #if ENABLED(CNC_COORDINATE_SYSTEMS)
 
+<<<<<<< HEAD
+=======
+#include "../../module/stepper.h"
+
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 //#define DEBUG_M53
 
 /**

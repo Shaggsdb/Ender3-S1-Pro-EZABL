@@ -28,7 +28,11 @@
 
 //#define MUTE_GAMES
 
+<<<<<<< HEAD
 #if ENABLED(MUTE_GAMES) || !HAS_SOUND
+=======
+#if ENABLED(MUTE_GAMES) || !HAS_BUZZER
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   #define _BUZZ(D,F) NOOP
 #else
   #define _BUZZ(D,F) BUZZ(D,F)

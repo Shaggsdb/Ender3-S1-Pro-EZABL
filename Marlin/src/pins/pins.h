@@ -402,8 +402,11 @@
   #include "lpc1768/pins_BTT_SKR_V1_3.h"        // LPC1768                                env:LPC1768
 #elif MB(BTT_SKR_V1_4)
   #include "lpc1768/pins_BTT_SKR_V1_4.h"        // LPC1768                                env:LPC1768
+<<<<<<< HEAD
 #elif MB(EMOTRONIC)
   #include "lpc1768/pins_EMOTRONIC.h"           // LPC1768                                env:LPC1768
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 //
 // LPC1769 ARM Cortex M3
@@ -569,8 +572,11 @@
   #include "stm32f1/pins_CREALITY_V4.h"         // STM32F1                                env:STM32F103RE_creality env:STM32F103RE_creality_xfer env:STM32F103RC_creality env:STM32F103RC_creality_xfer env:STM32F103RE_creality_maple
 #elif MB(CREALITY_V4210)
   #include "stm32f1/pins_CREALITY_V4210.h"      // STM32F1                                env:STM32F103RE_creality env:STM32F103RE_creality_xfer env:STM32F103RC_creality env:STM32F103RC_creality_xfer env:STM32F103RE_creality_maple
+<<<<<<< HEAD
 #elif MB(CREALITY_V425)
   #include "stm32f1/pins_CREALITY_V425.h"       // STM32F1                                env:STM32F103RE_creality env:STM32F103RE_creality_xfer env:STM32F103RC_creality env:STM32F103RC_creality_xfer env:STM32F103RE_creality_maple
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #elif MB(CREALITY_V422)
   #include "stm32f1/pins_CREALITY_V422.h"       // STM32F1                                env:STM32F103RE_creality env:STM32F103RE_creality_xfer env:STM32F103RC_creality env:STM32F103RC_creality_xfer env:STM32F103RE_creality_maple
 #elif MB(CREALITY_V423)
@@ -590,7 +596,11 @@
 #elif MB(CREALITY_V25S1)
   #include "stm32f1/pins_CREALITY_V25S1.h"      // STM32F1                                env:STM32F103RE_creality_smartPro env:STM32F103RE_creality_smartPro_maple
 #elif MB(TRIGORILLA_PRO)
+<<<<<<< HEAD
   #include "stm32f1/pins_TRIGORILLA_PRO.h"      // STM32F1                                env:trigorilla_pro env:trigorilla_pro_maple env:trigorilla_pro_disk
+=======
+  #include "stm32f1/pins_TRIGORILLA_PRO.h"      // STM32F1                                env:trigorilla_pro env:trigorilla_pro_maple
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #elif MB(FLY_MINI)
   #include "stm32f1/pins_FLY_MINI.h"            // STM32F1                                env:FLY_MINI env:FLY_MINI_maple
 #elif MB(FLSUN_HISPEED)
@@ -609,8 +619,11 @@
   #include "stm32f1/pins_ERYONE_ERY32_MINI.h"   // STM32F103VET6                          env:ERYONE_ERY32_MINI_maple
 #elif MB(PANDA_PI_V29)
   #include "stm32f1/pins_PANDA_PI_V29.h"        // STM32F103RCT6                          env:PANDA_PI_V29
+<<<<<<< HEAD
 #elif MB(VOXELAB_AQUILA)
   #include "stm32f1/pins_CREALITY_V4.h"         // STM32F1                                env:GD32F103RE_aquila env:GD32F103RC_aquila env:GD32F103RE_aquila_maple env:GD32F103RC_aquila_maple
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 //
 // ARM Cortex-M4F
@@ -635,6 +648,11 @@
   #include "stm32f4/pins_RUMBA32_BTT.h"         // STM32F4                                env:rumba32
 #elif MB(BLACK_STM32F407VE)
   #include "stm32f4/pins_BLACK_STM32F407VE.h"   // STM32F4                                env:STM32F407VE_black
+<<<<<<< HEAD
+=======
+#elif MB(STEVAL_3DP001V1)
+  #include "stm32f4/pins_STEVAL_3DP001V1.h"     // STM32F4                                env:STM32F401VE_STEVAL
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #elif MB(BTT_SKR_PRO_V1_1)
   #include "stm32f4/pins_BTT_SKR_PRO_V1_1.h"    // STM32F4                                env:BIGTREE_SKR_PRO env:BIGTREE_SKR_PRO_usb_flash_drive
 #elif MB(BTT_SKR_PRO_V1_2)
@@ -687,10 +705,15 @@
   #include "stm32f4/pins_ANET_ET4P.h"           // STM32F4                                env:Anet_ET4_no_bootloader env:Anet_ET4_OpenBLT
 #elif MB(FYSETC_CHEETAH_V20)
   #include "stm32f4/pins_FYSETC_CHEETAH_V20.h"  // STM32F4                                env:FYSETC_CHEETAH_V20
+<<<<<<< HEAD
 #elif MB(MKS_MONSTER8_V1)
   #include "stm32f4/pins_MKS_MONSTER8_V1.h"     // STM32F4                                env:mks_monster8 env:mks_monster8_usb_flash_drive env:mks_monster8_usb_flash_drive_msc
 #elif MB(MKS_MONSTER8_V2)
   #include "stm32f4/pins_MKS_MONSTER8_V2.h"     // STM32F4                                env:mks_monster8 env:mks_monster8_usb_flash_drive env:mks_monster8_usb_flash_drive_msc
+=======
+#elif MB(MKS_MONSTER8)
+  #include "stm32f4/pins_MKS_MONSTER8.h"        // STM32F4                                env:mks_monster8 env:mks_monster8_usb_flash_drive env:mks_monster8_usb_flash_drive_msc
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #elif MB(TH3D_EZBOARD_V2)
   #include "stm32f4/pins_TH3D_EZBOARD_V2.h"     // STM32F4                                env:TH3D_EZBoard_V2_no_bootloader env:TH3D_EZBoard_V2_OpenBLT
 #elif MB(OPULO_LUMEN_REV3)
@@ -790,7 +813,10 @@
   #define BOARD_STM32F103R              99906
   #define BOARD_ESP32                   99907
   #define BOARD_STEVAL                  99908
+<<<<<<< HEAD
   #define BOARD_STEVAL_3DP001V1         99908
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   #define BOARD_BIGTREE_SKR_V1_1        99909
   #define BOARD_BIGTREE_SKR_V1_3        99910
   #define BOARD_BIGTREE_SKR_V1_4        99911
@@ -807,7 +833,10 @@
   #define BOARD_BTT_SKR_V2_0            99922
   #define BOARD_TH3D_EZBOARD_LITE_V2    99923
   #define BOARD_BTT_SKR_SE_BX           99924
+<<<<<<< HEAD
   #define BOARD_MKS_MONSTER8            99925
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
   #if MB(MKS_13)
     #error "BOARD_MKS_13 has been renamed BOARD_MKS_GEN_13. Please update your configuration."
@@ -846,7 +875,11 @@
   #elif MOTHERBOARD == BOARD_ESP32
     #error "BOARD_ESP32 has been renamed BOARD_ESPRESSIF_ESP32. Please update your configuration."
   #elif MB(STEVAL)
+<<<<<<< HEAD
     #error "BOARD_STEVAL_3DP001V1 (BOARD_STEVAL) is no longer supported in Marlin."
+=======
+    #error "BOARD_STEVAL has been renamed BOARD_STEVAL_3DP001V1. Please update your configuration."
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   #elif MB(RUMBA32)
     #error "BOARD_RUMBA32 is now BOARD_RUMBA32_MKS or BOARD_RUMBA32_V1_0. Please update your configuration."
   #elif MB(RUMBA32_AUS3D)
@@ -861,8 +894,11 @@
     #error "BOARD_TH3D_EZBOARD_LITE_V2 is now BOARD_TH3D_EZBOARD_V2. Please update your configuration."
   #elif MB(BTT_SKR_SE_BX)
     #error "BOARD_BTT_SKR_SE_BX is now BOARD_BTT_SKR_SE_BX_V2 or BOARD_BTT_SKR_SE_BX_V3. Please update your configuration."
+<<<<<<< HEAD
   #elif MB(MKS_MONSTER8)
     #error "BOARD_MKS_MONSTER8 is now BOARD_MKS_MONSTER8_V1 or BOARD_MKS_MONSTER8_V2. Please update your configuration."
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   #elif defined(MOTHERBOARD)
     #error "Unknown MOTHERBOARD value set in Configuration.h."
   #else
@@ -878,7 +914,11 @@
   #undef BOARD_STM32F103R
   #undef BOARD_ESP32
   #undef BOARD_STEVAL
+<<<<<<< HEAD
   #undef BOARD_STEVAL_3DP001V1
+=======
+  #undef BOARD_BIGTREE_SKR_MINI_E3
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   #undef BOARD_BIGTREE_SKR_V1_1
   #undef BOARD_BIGTREE_SKR_V1_3
   #undef BOARD_BIGTREE_SKR_V1_4
@@ -886,7 +926,10 @@
   #undef BOARD_BIGTREE_BTT002_V1_0
   #undef BOARD_BIGTREE_SKR_PRO_V1_1
   #undef BOARD_BIGTREE_SKR_MINI_V1_1
+<<<<<<< HEAD
   #undef BOARD_BIGTREE_SKR_MINI_E3
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   #undef BOARD_BIGTREE_SKR_E3_DIP
   #undef BOARD_RUMBA32
   #undef BOARD_RUMBA32_AUS3D
@@ -895,7 +938,10 @@
   #undef BOARD_BTT_SKR_V2_0
   #undef BOARD_TH3D_EZBOARD_LITE_V2
   #undef BOARD_BTT_SKR_SE_BX
+<<<<<<< HEAD
   #undef BOARD_MKS_MONSTER8
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 #endif
 

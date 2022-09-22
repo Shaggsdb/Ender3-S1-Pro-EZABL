@@ -320,12 +320,16 @@ struct HeaterWatch {
 #endif
 
 // Temperature sensor read value ranges
+<<<<<<< HEAD
 #if ProUIex
   typedef struct { raw_adc_t raw_min, raw_max; celsius_t mintemp, tablemax, maxtemp; } temp_range_t;
   const int8_t SGN_RAW_TEMP = ((TEMP_SENSOR_0_RAW_LO_TEMP) < (TEMP_SENSOR_0_RAW_HI_TEMP) ? 1 : -1) * (OVERSAMPLENR);
 #else
   typedef struct { raw_adc_t raw_min, raw_max; celsius_t mintemp, maxtemp; } temp_range_t;
 #endif
+=======
+typedef struct { raw_adc_t raw_min, raw_max; celsius_t mintemp, maxtemp; } temp_range_t;
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 #define THERMISTOR_ABS_ZERO_C           -273.15f  // bbbbrrrrr cold !
 #define THERMISTOR_RESISTANCE_NOMINAL_C 25.0f     // mmmmm comfortable
@@ -955,7 +959,11 @@ class Temperature {
      */
     #if HAS_PID_HEATING
 
+<<<<<<< HEAD
       #if HAS_PID_DEBUG
+=======
+      #if ANY(PID_DEBUG, PID_BED_DEBUG, PID_CHAMBER_DEBUG)
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
         static bool pid_debug_flag;
       #endif
 
@@ -1018,7 +1026,11 @@ class Temperature {
       static void set_heating_message(const uint8_t, const bool=false) {}
     #endif
 
+<<<<<<< HEAD
     #if HAS_MARLINUI_MENU && HAS_TEMPERATURE && HAS_PREHEAT
+=======
+    #if HAS_MARLINUI_MENU && HAS_TEMPERATURE
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
       static void lcd_preheat(const uint8_t e, const int8_t indh, const int8_t indb);
     #endif
 
@@ -1037,7 +1049,11 @@ class Temperature {
 
     // MAX Thermocouples
     #if HAS_MAX_TC
+<<<<<<< HEAD
       #define MAX_TC_COUNT TEMP_SENSOR_IS_MAX_TC(0) + TEMP_SENSOR_IS_MAX_TC(1) + TEMP_SENSOR_IS_MAX_TC(REDUNDANT)
+=======
+      #define MAX_TC_COUNT COUNT_ENABLED(TEMP_SENSOR_0_IS_MAX_TC, TEMP_SENSOR_1_IS_MAX_TC, TEMP_SENSOR_REDUNDANT_IS_MAX_TC)
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
       #if MAX_TC_COUNT > 1
         #define HAS_MULTI_MAX_TC 1
         #define READ_MAX_TC(N) read_max_tc(N)

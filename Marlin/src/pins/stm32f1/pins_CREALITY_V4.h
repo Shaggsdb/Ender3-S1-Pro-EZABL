@@ -77,12 +77,17 @@
 //
 // Limit Switches
 //
+<<<<<<< HEAD
 #ifndef X_STOP_PIN
   #define X_STOP_PIN                        PA5
 #endif
 #ifndef Y_STOP_PIN
   #define Y_STOP_PIN                        PA6
 #endif
+=======
+#define X_STOP_PIN                          PA5
+#define Y_STOP_PIN                          PA6
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #ifndef Z_STOP_PIN
   #define Z_STOP_PIN                        PA7
 #endif
@@ -157,7 +162,11 @@
 // SD Card
 //
 #define SD_DETECT_PIN                       PC7
+<<<<<<< HEAD
 #define SDCARD_CONNECTION ONBOARD
+=======
+#define SDCARD_CONNECTION                ONBOARD
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #define SDIO_SUPPORT
 #define NO_SD_HOST_DRIVE                          // This board's SD is only seen by the printer
 
@@ -165,6 +174,7 @@
 
   #if ENABLED(RET6_12864_LCD)
 
+<<<<<<< HEAD
     /**
      *    RET6 12864 LCD
      *        ------
@@ -187,10 +197,24 @@
 
     #ifndef HAS_PIN_27_BOARD
       #define BEEPER_PIN             EXP1_01_PIN
+=======
+    // RET6 12864 LCD
+    #define LCD_PINS_RS                     PB12
+    #define LCD_PINS_ENABLE                 PB15
+    #define LCD_PINS_D4                     PB13
+
+    #define BTN_ENC                         PB2
+    #define BTN_EN1                         PB10
+    #define BTN_EN2                         PB14
+
+    #ifndef HAS_PIN_27_BOARD
+      #define BEEPER_PIN                    PC6
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
     #endif
 
   #elif ENABLED(VET6_12864_LCD)
 
+<<<<<<< HEAD
     /**
      *    VET6 12864 LCD
      *        ------
@@ -210,11 +234,22 @@
     #define EXP1_06_PIN                     PA5
     #define EXP1_07_PIN                     PA4
     #define EXP1_08_PIN                     PA7
+=======
+    // VET6 12864 LCD
+    #define LCD_PINS_RS                     PA4
+    #define LCD_PINS_ENABLE                 PA7
+    #define LCD_PINS_D4                     PA5
+
+    #define BTN_ENC                         PC5
+    #define BTN_EN1                         PB10
+    #define BTN_EN2                         PA6
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
   #else
     #error "Define RET6_12864_LCD or VET6_12864_LCD to select pins for CR10_STOCKDISPLAY with the Creality V4 controller."
   #endif
 
+<<<<<<< HEAD
   #define LCD_PINS_RS                EXP1_07_PIN
   #define LCD_PINS_ENABLE            EXP1_08_PIN
   #define LCD_PINS_D4                EXP1_06_PIN
@@ -248,4 +283,27 @@
     #define BEEPER_PIN               EXP1_06_PIN
   #endif
 
+=======
+#elif HAS_DWIN_E3V2 || IS_DWIN_MARLINUI
+
+  // RET6 DWIN ENCODER LCD
+  #define BTN_ENC                           PB14
+  #define BTN_EN1                           PB15
+  #define BTN_EN2                           PB12
+
+  //#define LCD_LED_PIN                     PB2
+  #ifndef BEEPER_PIN
+    #define BEEPER_PIN                      PB13
+  #endif
+
+#elif ENABLED(DWIN_VET6_CREALITY_LCD)
+
+  // VET6 DWIN ENCODER LCD
+  #define BTN_ENC                           PA6
+  #define BTN_EN1                           PA7
+  #define BTN_EN2                           PA4
+
+  #define BEEPER_PIN                        PA5
+
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #endif

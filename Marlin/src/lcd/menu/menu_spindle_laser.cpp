@@ -48,12 +48,20 @@
         cutter.mpower_min(), cutter.mpower_max(), cutter.update_from_mpower);
     #endif
 
+<<<<<<< HEAD
     editable.state = is_enabled; // State before toggle
+=======
+    editable.state = is_enabled;
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
     EDIT_ITEM(bool, MSG_CUTTER(TOGGLE), &is_enabled, []{
       #if ENABLED(SPINDLE_FEATURE)
         if (editable.state) cutter.disable(); else cutter.enable_same_dir();
       #else
+<<<<<<< HEAD
         cutter.menu_set_enabled(!editable.state);
+=======
+        cutter.laser_menu_toggle(!editable.state);
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
       #endif
     });
 

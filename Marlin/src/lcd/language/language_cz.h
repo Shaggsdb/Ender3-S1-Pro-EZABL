@@ -232,7 +232,10 @@ namespace Language_cz {
   LSTR MSG_MOVE_X                         = _UxGT("Posunout X");
   LSTR MSG_MOVE_Y                         = _UxGT("Posunout Y");
   LSTR MSG_MOVE_Z                         = _UxGT("Posunout Z");
+<<<<<<< HEAD
   LSTR MSG_MOVE_N                         = _UxGT("Posunout @");
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   LSTR MSG_MOVE_E                         = _UxGT("Extrudér");
   LSTR MSG_MOVE_EN                        = _UxGT("Extrudér *");
   LSTR MSG_HOTEND_TOO_COLD                = _UxGT("Hotend je studený");

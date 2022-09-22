@@ -300,6 +300,7 @@ void report_current_position_projected() {
 
 #endif
 
+<<<<<<< HEAD
 #if IS_KINEMATIC
 
   bool position_is_reachable(const_float_t rx, const_float_t ry, const float inset/*=0*/) {
@@ -367,6 +368,8 @@ void report_current_position_projected() {
 #endif // CARTESIAN
 
 
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 void home_if_needed(const bool keeplev/*=false*/) {
   if (!all_axes_trusted()) gcode.home_all_axes(keeplev);
 }
@@ -1087,7 +1090,11 @@ FORCE_INLINE void segment_idle(millis_t &next_idle_ms) {
     if (!position_is_reachable(destination)) return true;
 
     // Get the linear distance in XYZ
+<<<<<<< HEAD
     float cartesian_mm = xyz_float_t(diff).magnitude();
+=======
+    float cartesian_mm = diff.magnitude();
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
     // If the move is very short, check the E move distance
     TERN_(HAS_EXTRUDERS, if (UNEAR_ZERO(cartesian_mm)) cartesian_mm = ABS(diff.e));

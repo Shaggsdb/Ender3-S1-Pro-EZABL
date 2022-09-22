@@ -24,7 +24,10 @@
 #include "../../MarlinCore.h" // for stepper_inactive_time, disable_e_steppers
 #include "../../lcd/marlinui.h"
 #include "../../module/motion.h" // for e_axis_mask
+<<<<<<< HEAD
 #include "../../module/planner.h"
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #include "../../module/stepper.h"
 
 #if ENABLED(AUTO_BED_LEVELING_UBL)

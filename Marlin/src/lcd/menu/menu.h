@@ -214,6 +214,11 @@ void menu_move();
 //////// Menu Item Helper Functions ////////
 ////////////////////////////////////////////
 
+<<<<<<< HEAD
+=======
+void lcd_move_axis(const AxisEnum);
+void lcd_move_z();
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 void _lcd_draw_homing();
 
 #define HAS_LINE_TO_Z ANY(DELTA, PROBE_MANUALLY, MESH_BED_LEVELING, LCD_BED_TRAMMING)

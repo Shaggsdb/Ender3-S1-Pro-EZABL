@@ -22,7 +22,11 @@
 # 2020-06-05 SRL style tweaks
 #-----------------------------------
 #
+<<<<<<< HEAD
 import sys
+=======
+import sys,os
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 from pathlib import Path
 from distutils.dir_util import copy_tree  # for copy_tree, because shutil.copytree can't handle existing files, dirs
 
@@ -58,10 +62,17 @@ def process_file(subdir: str, filename: str):
 	# Read file
 	#------------------------
 	lines = []
+<<<<<<< HEAD
 	infilepath = Path(input_examples_dir, subdir, filename)
 	try:
 		# UTF-8 because some files contain unicode chars
 		with infilepath.open('rt', encoding="utf-8") as infile:
+=======
+	infilepath = os.path.join(input_examples_dir, subdir, filename)
+	try:
+		# UTF-8 because some files contain unicode chars
+		with open(infilepath, 'rt', encoding="utf-8") as infile:
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 			lines = infile.readlines()
 
 	except Exception as e:
@@ -123,24 +134,42 @@ def process_file(subdir: str, filename: str):
 	#-------------------------
 	#     Output file
 	#-------------------------
+<<<<<<< HEAD
 	outdir      = Path(output_examples_dir, subdir)
 	outfilepath = outdir / filename
+=======
+	outdir      = os.path.join(output_examples_dir, subdir)
+	outfilepath = os.path.join(outdir, filename)
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 	if file_modified:
 		# Note: no need to create output dirs, as the initial copy_tree
 		# will do that.
 
+<<<<<<< HEAD
 		print('  writing ' + outfilepath)
 		try:
 			# Preserve unicode chars; Avoid CR-LF on Windows.
 			with outfilepath.open("w", encoding="utf-8", newline='\n') as outfile:
 				outfile.write("\n".join(outlines) + "\n")
+=======
+		print('  writing ' + str(outfilepath))
+		try:
+			# Preserve unicode chars; Avoid CR-LF on Windows.
+			with open(outfilepath, "w", encoding="utf-8", newline='\n') as outfile:
+				outfile.write("\n".join(outlines))
+				outfile.write("\n")
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 		except Exception as e:
 			print('Failed to write file: ' + str(e) )
 			raise Exception
 	else:
+<<<<<<< HEAD
 		print('  no change for ' + outfilepath)
+=======
+		print('  no change for ' + str(outfilepath))
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 #----------
 def main():
@@ -158,8 +187,13 @@ def main():
 	output_examples_dir = output_examples_dir.strip()
 	output_examples_dir = output_examples_dir.rstrip('\\/')
 
+<<<<<<< HEAD
 	for dir in (input_examples_dir, output_examples_dir):
 		if not Path(dir).exists():
+=======
+	for dir in [input_examples_dir, output_examples_dir]:
+		if not (os.path.exists(dir)):
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 			print('Directory not found: ' + dir)
 			sys.exit(1)
 
@@ -180,7 +214,12 @@ def main():
 	#-----------------------------
 	# Find and process files
 	#-----------------------------
+<<<<<<< HEAD
 	len_input_examples_dir = 1 + len(input_examples_dir)
+=======
+	len_input_examples_dir = len(input_examples_dir);
+	len_input_examples_dir += 1
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 	for filename in files_to_mod:
 		input_path = Path(input_examples_dir)

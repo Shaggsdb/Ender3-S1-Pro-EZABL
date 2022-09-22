@@ -372,9 +372,15 @@ void TFT_LTDC::TransmitDMA(uint32_t MemoryIncrease, uint16_t *Data, uint16_t Cou
     if (MemoryIncrease == DMA_PINC_ENABLE) {
       DrawImage(x_min, y_cur, x_min + width, y_cur + height, Data);
       Data += width * height;
+<<<<<<< HEAD
     }
     else
       DrawRect(x_min, y_cur, x_min + width, y_cur + height, *Data);
+=======
+    } else {
+      DrawRect(x_min, y_cur, x_min + width, y_cur + height, *Data);
+    }
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
     y_cur += height;
   }
 

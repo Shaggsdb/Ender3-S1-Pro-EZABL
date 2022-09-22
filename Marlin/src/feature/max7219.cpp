@@ -44,6 +44,10 @@
 #include "max7219.h"
 
 #include "../module/planner.h"
+<<<<<<< HEAD
+=======
+#include "../module/stepper.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #include "../MarlinCore.h"
 #include "../HAL/shared/Delay.h"
 

@@ -24,9 +24,14 @@
 
 #include "../gcode.h"
 
+<<<<<<< HEAD
 #include "../../module/endstops.h"
 #include "../../module/planner.h"
 #include "../../module/stepper.h" // for various
+=======
+#include "../../module/stepper.h"
+#include "../../module/endstops.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 #if HAS_MULTI_HOTEND
   #include "../../module/tool_change.h"
@@ -36,10 +41,13 @@
   #include "../../feature/bedlevel/bedlevel.h"
 #endif
 
+<<<<<<< HEAD
 #if ENABLED(BD_SENSOR)
   #include "../../feature/bedlevel/bdl/bdl.h"
 #endif
 
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #if ENABLED(SENSORLESS_HOMING)
   #include "../../feature/tmc_util.h"
 #endif
@@ -60,6 +68,13 @@
   #include "../../lcd/e3v2/proui/dwin.h"
 #endif
 
+<<<<<<< HEAD
+=======
+#if HAS_L64XX                         // set L6470 absolute position registers to counts
+  #include "../../libs/L64XX/L64XX_Marlin.h"
+#endif
+
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #if ENABLED(LASER_FEATURE)
   #include "../../feature/spindle_laser.h"
 #endif
@@ -206,9 +221,13 @@ void GcodeSuite::G28() {
   DEBUG_SECTION(log_G28, "G28", DEBUGGING(LEVELING));
   if (DEBUGGING(LEVELING)) log_machine_info();
 
+<<<<<<< HEAD
   TERN_(BD_SENSOR, bdl.config_state = 0);
 
   /**
+=======
+  /*
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
    * Set the laser power to false to stop the planner from processing the current power setting.
    */
   #if ENABLED(LASER_FEATURE)
@@ -604,4 +623,23 @@ void GcodeSuite::G28() {
 
   TERN_(FULL_REPORT_TO_HOST_FEATURE, set_and_report_grblstate(old_grblstate));
 
+<<<<<<< HEAD
+=======
+  #if HAS_L64XX
+    // Set L6470 absolute position registers to counts
+    // constexpr *might* move this to PROGMEM.
+    // If not, this will need a PROGMEM directive and an accessor.
+    #define _EN_ITEM(N) , E_AXIS
+    static constexpr AxisEnum L64XX_axis_xref[MAX_L64XX] = {
+      NUM_AXIS_LIST(X_AXIS, Y_AXIS, Z_AXIS, I_AXIS, J_AXIS, K_AXIS, U_AXIS, V_AXIS, W_AXIS),
+      X_AXIS, Y_AXIS, Z_AXIS, Z_AXIS, Z_AXIS
+      REPEAT(E_STEPPERS, _EN_ITEM)
+    };
+    #undef _EN_ITEM
+    for (uint8_t j = 1; j <= L64XX::chain[0]; j++) {
+      const uint8_t cv = L64XX::chain[j];
+      L64xxManager.set_param((L64XX_axis_t)cv, L6470_ABS_POS, stepper.position(L64XX_axis_xref[cv]));
+    }
+  #endif
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 }

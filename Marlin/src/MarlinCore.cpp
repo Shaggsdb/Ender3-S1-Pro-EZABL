@@ -39,6 +39,7 @@
 #endif
 #include <math.h>
 
+<<<<<<< HEAD
 #include "module/endstops.h"
 #include "module/motion.h"
 #include "module/planner.h"
@@ -46,6 +47,19 @@
 #include "module/settings.h"
 #include "module/stepper.h"
 #include "module/temperature.h"
+=======
+#include "core/utility.h"
+
+#include "module/motion.h"
+#include "module/planner.h"
+#include "module/endstops.h"
+#include "module/temperature.h"
+#include "module/settings.h"
+#include "module/printcounter.h" // PrintCounter or Stopwatch
+
+#include "module/stepper.h"
+#include "module/stepper/indirection.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 #include "gcode/gcode.h"
 #include "gcode/parser.h"
@@ -119,10 +133,13 @@
   #include "feature/bltouch.h"
 #endif
 
+<<<<<<< HEAD
 #if ENABLED(BD_SENSOR)
   #include "feature/bedlevel/bdl/bdl.h"
 #endif
 
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #if ENABLED(POLL_JOG)
   #include "feature/joystick.h"
 #endif
@@ -226,6 +243,13 @@
   #include "feature/mmu/mmu2.h"
 #endif
 
+<<<<<<< HEAD
+=======
+#if HAS_L64XX
+  #include "libs/L64XX/L64XX_Marlin.h"
+#endif
+
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #if ENABLED(PASSWORD_FEATURE)
   #include "feature/password/password.h"
 #endif
@@ -246,10 +270,13 @@
   #include "feature/easythreed_ui.h"
 #endif
 
+<<<<<<< HEAD
 #if ENABLED(MARLIN_TEST_BUILD)
   #include "tests/marlin_tests.h"
 #endif
 
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 PGMSTR(M112_KILL_STR, "M112 Shutdown");
 
 MarlinState marlin_state = MF_INITIALIZING;
@@ -432,7 +459,11 @@ inline void manage_inactivity(const bool no_stepper_sleep=false) {
 
       if (!has_blocks && !do_reset_timeout && gcode.stepper_inactive_timeout()) {
         if (!already_shutdown_steppers) {
+<<<<<<< HEAD
           already_shutdown_steppers = true;
+=======
+          already_shutdown_steppers = true;  // L6470 SPI will consume 99% of free time without this
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
           // Individual axes will be disabled if configured
           TERN_(DISABLE_INACTIVE_X, stepper.disable_axis(X_AXIS));
@@ -731,6 +762,11 @@ inline void manage_inactivity(const bool no_stepper_sleep=false) {
 
   TERN_(MONITOR_DRIVER_STATUS, monitor_tmc_drivers());
 
+<<<<<<< HEAD
+=======
+  TERN_(MONITOR_L6470_DRIVER_STATUS, L64xxManager.monitor_driver());
+
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   // Limit check_axes_activity frequency to 10Hz
   static millis_t next_check_axes_ms = 0;
   if (ELAPSED(ms, next_check_axes_ms)) {
@@ -781,9 +817,12 @@ void idle(bool no_stepper_sleep/*=false*/) {
     if (++idle_depth > 5) SERIAL_ECHOLNPGM("idle() call depth: ", idle_depth);
   #endif
 
+<<<<<<< HEAD
   // Bed Distance Sensor task
   TERN_(BD_SENSOR, bdl.process());
 
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   // Core Marlin activities
   manage_inactivity(no_stepper_sleep);
 
@@ -1063,6 +1102,10 @@ inline void tmc_standby_setup() {
  *    • TMC220x Stepper Drivers (Serial)
  *    • PSU control
  *    • Power-loss Recovery
+<<<<<<< HEAD
+=======
+ *    • L64XX Stepper Drivers (SPI)
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
  *    • Stepper Driver Reset: DISABLE
  *    • TMC Stepper Drivers (SPI)
  *    • Run hal.init_board() for additional pins setup
@@ -1225,10 +1268,17 @@ void setup() {
   SETUP_RUN(hal.init());
 
   // Init and disable SPI thermocouples; this is still needed
+<<<<<<< HEAD
   #if TEMP_SENSOR_IS_MAX_TC(0) || (TEMP_SENSOR_IS_MAX_TC(REDUNDANT) && REDUNDANT_TEMP_MATCH(SOURCE, E0))
     OUT_WRITE(TEMP_0_CS_PIN, HIGH);  // Disable
   #endif
   #if TEMP_SENSOR_IS_MAX_TC(1) || (TEMP_SENSOR_IS_MAX_TC(REDUNDANT) && REDUNDANT_TEMP_MATCH(SOURCE, E1))
+=======
+  #if TEMP_SENSOR_0_IS_MAX_TC || (TEMP_SENSOR_REDUNDANT_IS_MAX_TC && REDUNDANT_TEMP_MATCH(SOURCE, E0))
+    OUT_WRITE(TEMP_0_CS_PIN, HIGH);  // Disable
+  #endif
+  #if TEMP_SENSOR_1_IS_MAX_TC || (TEMP_SENSOR_REDUNDANT_IS_MAX_TC && REDUNDANT_TEMP_MATCH(SOURCE, E1))
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
     OUT_WRITE(TEMP_1_CS_PIN, HIGH);
   #endif
 
@@ -1251,6 +1301,13 @@ void setup() {
     SETUP_RUN(tmc_init_cs_pins());
   #endif
 
+<<<<<<< HEAD
+=======
+  #if HAS_L64XX
+    SETUP_RUN(L64xxManager.init());  // Set up SPI, init drivers
+  #endif
+
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   #if ENABLED(PSU_CONTROL)
     SETUP_LOG("PSU_CONTROL");
     powerManager.init();
@@ -1646,6 +1703,7 @@ void setup() {
     SETUP_RUN(test_tmc_connection());
   #endif
 
+<<<<<<< HEAD
   #if ENABLED(BD_SENSOR)
     SETUP_RUN(bdl.init(I2C_BD_SDA_PIN, I2C_BD_SCL_PIN, I2C_BD_DELAY));
   #endif
@@ -1655,6 +1713,11 @@ void setup() {
   SETUP_LOG("setup() completed.");
 
   TERN_(MARLIN_TEST_BUILD, runStartupTests());
+=======
+  marlin_state = MF_RUNNING;
+
+  SETUP_LOG("setup() completed.");
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 }
 
 /**
@@ -1689,7 +1752,10 @@ void loop() {
 
     TERN_(HAS_TFT_LVGL_UI, printer_state_polling());
 
+<<<<<<< HEAD
     TERN_(MARLIN_TEST_BUILD, runPeriodicTests());
 
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   } while (ENABLED(__AVR__)); // Loop forever on slower (AVR) boards
 }

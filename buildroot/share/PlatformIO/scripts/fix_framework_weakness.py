@@ -10,7 +10,11 @@ if pioutil.is_pio_build():
 
 	Import("env")
 
+<<<<<<< HEAD
 	if env.MarlinHas("POSTMORTEM_DEBUGGING"):
+=======
+	if env.MarlinFeatureIsEnabled("POSTMORTEM_DEBUGGING"):
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 		FRAMEWORK_DIR = env.PioPlatform().get_package_dir("framework-arduinoststm32-maple")
 		patchflag_path = join(FRAMEWORK_DIR, ".exc-patching-done")
 

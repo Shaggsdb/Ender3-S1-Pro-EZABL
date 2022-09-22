@@ -65,11 +65,17 @@ static void _change_filament_with_temp(const uint16_t celsius) {
   queue.inject(cmd);
 }
 
+<<<<<<< HEAD
 #if HAS_PREHEAT
   static void _change_filament_with_preset() {
     _change_filament_with_temp(ui.material_preset[MenuItemBase::itemIndex].hotend_temp);
   }
 #endif
+=======
+static void _change_filament_with_preset() {
+  _change_filament_with_temp(ui.material_preset[MenuItemBase::itemIndex].hotend_temp);
+}
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 static void _change_filament_with_custom() {
   _change_filament_with_temp(thermalManager.degTargetHotend(MenuItemBase::itemIndex));

@@ -261,7 +261,11 @@ public:
       for (;;) {
         const char c = *e;
         if (c == '\0' || c == ' ') break;
+<<<<<<< HEAD
         if (c == 'E' || c == 'e' || c == 'X' || c == 'x') {
+=======
+        if (c == 'E' || c == 'e') {
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
           *e = '\0';
           const float ret = strtof(value_ptr, nullptr);
           *e = c;

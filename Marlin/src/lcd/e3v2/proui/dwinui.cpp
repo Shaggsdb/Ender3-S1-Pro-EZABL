@@ -1,8 +1,13 @@
 /**
  * DWIN Enhanced implementation for PRO UI
  * Author: Miguel A. Risco-Castillo (MRISCOC)
+<<<<<<< HEAD
  * Version: 3.19.1
  * Date: 2022/08/18
+=======
+ * Version: 3.18.1
+ * Date: 2022/07/05
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as
@@ -207,6 +212,7 @@ void DWINUI::Draw_Float(uint8_t bShow, bool signedMode, font_t size, uint16_t co
   DWIN_Draw_String(bShow, size, color, bColor, x, y, dtostrf(value, iNum + (signedMode ? 2:1) + fNum, fNum, nstr));
 }
 
+<<<<<<< HEAD
 // ------------------------- Icons -------------------------------//
 
 // Draw an Icon and select library automatically
@@ -220,6 +226,8 @@ void DWINUI::ICON_Show(bool BG, uint8_t icon, uint16_t x, uint16_t y) {
   DWIN_ICON_Show(BG, false, !BG, libID, picID, x, y);
 }
 
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 // ------------------------- Buttons ------------------------------//
 
 void DWINUI::Draw_Button(uint16_t color, uint16_t bcolor, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, const char * const caption) {

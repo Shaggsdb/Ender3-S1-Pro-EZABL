@@ -2,18 +2,35 @@
 # marlin.py
 # Helper module with some commonly-used functions
 #
+<<<<<<< HEAD
 import shutil
 from pathlib import Path
+=======
+import os,shutil
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 from SCons.Script import DefaultEnvironment
 env = DefaultEnvironment()
 
+<<<<<<< HEAD
 def copytree(src, dst, symlinks=False, ignore=None):
 	for item in src.iterdir():
 		if item.is_dir():
 			shutil.copytree(item, dst / item.name, symlinks, ignore)
 		else:
 			shutil.copy2(item, dst / item.name)
+=======
+from os.path import join
+
+def copytree(src, dst, symlinks=False, ignore=None):
+	for item in os.listdir(src):
+		s = join(src, item)
+		d = join(dst, item)
+		if os.path.isdir(s):
+			shutil.copytree(s, d, symlinks, ignore)
+		else:
+			shutil.copy2(s, d)
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 def replace_define(field, value):
 	for define in env['CPPDEFINES']:
@@ -31,7 +48,11 @@ def relocate_vtab(address):
 
 # Replace the existing -Wl,-T with the given ldscript path
 def custom_ld_script(ldname):
+<<<<<<< HEAD
 	apath = str(Path("buildroot/share/PlatformIO/ldscripts", ldname).resolve())
+=======
+	apath = os.path.abspath("buildroot/share/PlatformIO/ldscripts/" + ldname)
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 	for i, flag in enumerate(env["LINKFLAGS"]):
 		if "-Wl,-T" in flag:
 			env["LINKFLAGS"][i] = "-Wl,-T" + apath
@@ -49,15 +70,26 @@ def encrypt_mks(source, target, env, new_name):
 	mf = env["MARLIN_FEATURES"]
 	if "FIRMWARE_BIN" in mf: new_name = mf["FIRMWARE_BIN"]
 
+<<<<<<< HEAD
 	fwpath = Path(target[0].path)
 	fwfile = fwpath.open("rb")
 	enfile = Path(target[0].dir.path, new_name).open("wb")
 	length = fwpath.stat().st_size
+=======
+	fwpath = target[0].path
+	fwfile = open(fwpath, "rb")
+	enfile = open(target[0].dir.path + "/" + new_name, "wb")
+	length = os.path.getsize(fwpath)
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 	position = 0
 	try:
 		while position < length:
 			byte = fwfile.read(1)
+<<<<<<< HEAD
 			if 320 <= position < 31040:
+=======
+			if position >= 320 and position < 31040:
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 				byte = chr(ord(byte) ^ key[position & 31])
 				if sys.version_info[0] > 2:
 					byte = bytes(byte, 'latin1')
@@ -66,7 +98,14 @@ def encrypt_mks(source, target, env, new_name):
 	finally:
 		fwfile.close()
 		enfile.close()
+<<<<<<< HEAD
 		fwpath.unlink()
 
 def add_post_action(action):
 	env.AddPostAction(str(Path("$BUILD_DIR", "${PROGNAME}.bin")), action);
+=======
+		os.remove(fwpath)
+
+def add_post_action(action):
+	env.AddPostAction(join("$BUILD_DIR", "${PROGNAME}.bin"), action);
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436

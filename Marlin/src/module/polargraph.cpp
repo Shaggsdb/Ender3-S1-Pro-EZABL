@@ -39,6 +39,7 @@
 
 float segments_per_second; // Initialized by settings.load()
 
+<<<<<<< HEAD
 xy_pos_t draw_area_min = { X_MIN_POS, Y_MIN_POS },
          draw_area_max = { X_MAX_POS, Y_MAX_POS };
 
@@ -48,6 +49,10 @@ float polargraph_max_belt_len = HYPOT(draw_area_size.x, draw_area_size.y);
 
 void inverse_kinematics(const xyz_pos_t &raw) {
   const float x1 = raw.x - (draw_area_min.x), x2 = (draw_area_max.x) - raw.x, y = raw.y - (draw_area_max.y);
+=======
+void inverse_kinematics(const xyz_pos_t &raw) {
+  const float x1 = raw.x - (X_MIN_POS), x2 = (X_MAX_POS) - raw.x, y = raw.y - (Y_MAX_POS);
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   delta.set(HYPOT(x1, y), HYPOT(x2, y), raw.z);
 }
 

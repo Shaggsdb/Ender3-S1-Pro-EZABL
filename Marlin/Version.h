@@ -34,14 +34,22 @@
  * Verbose version identifier which should contain a reference to the location
  * from where the binary was downloaded or the source code was compiled.
  */
+<<<<<<< HEAD
 #define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " Ender3V2-422-MM, based on bugfix-2.1.x"
+=======
+#define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " Ender3V2-SKRME3V3-MM, based on bugfix-2.1.x"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 /**
  * The STRING_DISTRIBUTION_DATE represents when the binary file was built,
  * here we define this default string as the date where the latest release
  * version was tagged.
  */
+<<<<<<< HEAD
 //#define STRING_DISTRIBUTION_DATE "2022-08-08"
+=======
+//#define STRING_DISTRIBUTION_DATE "2022-07-15"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 #define STRING_DISTRIBUTION_DATE __DATE__
 #define STRING_DISTRIBUTION_TIME __TIME__

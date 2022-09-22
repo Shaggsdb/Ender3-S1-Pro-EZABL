@@ -33,12 +33,23 @@
 #include "../gcode/gcode.h"
 
 #if ENABLED(TMC_DEBUG)
+<<<<<<< HEAD
+=======
+  #include "../module/planner.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   #include "../libs/hex_print.h"
   #if ENABLED(MONITOR_DRIVER_STATUS)
     static uint16_t report_tmc_status_interval; // = 0
   #endif
 #endif
 
+<<<<<<< HEAD
+=======
+#if HAS_MARLINUI_MENU
+  #include "../module/stepper.h"
+#endif
+
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 /**
  * Check for over temperature or short to ground error flags.
  * Report and log warning of overtemperature condition.

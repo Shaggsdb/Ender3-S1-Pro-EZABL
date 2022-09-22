@@ -28,7 +28,11 @@
 #include "../../module/temperature.h"
 
 #if ENABLED(DWIN_LCD_PROUI)
+<<<<<<< HEAD
   #include "../../lcd/e3v2/proui/dwin.h"
+=======
+  #include "../../lcd/e3v2/proui/dwin_defines.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #endif
 
 /**

@@ -237,7 +237,11 @@ void GcodeSuite::get_destination_from_command() {
       if (WITHIN(parser.codenum, 1, TERN(ARC_SUPPORT, 3, 1)) || TERN0(BEZIER_CURVE_SUPPORT, parser.codenum == 5)) {
         planner.laser_inline.status.isPowered = true;
         if (parser.seen('I')) cutter.set_enabled(true);       // This is set for backward LightBurn compatibility.
+<<<<<<< HEAD
         if (parser.seenval('S')) {
+=======
+        if (parser.seen('S')) {
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
           const float v = parser.value_float(),
                       u = TERN(LASER_POWER_TRAP, v, cutter.power_to_range(v));
           cutter.menuPower = cutter.unitPower = u;
@@ -583,10 +587,13 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
         case 100: M100(); break;                                  // M100: Free Memory Report
       #endif
 
+<<<<<<< HEAD
       #if ENABLED(BD_SENSOR)
         case 102: M102(); break;                                  // M102: Configure Bed Distance Sensor
       #endif
 
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
       #if HAS_EXTRUDERS
         case 104: M104(); break;                                  // M104: Set hot end temperature
         case 109: M109(); break;                                  // M109: Wait for hotend temperature to reach target
@@ -775,7 +782,11 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
         case 290: M290(); break;                                  // M290: Babystepping
       #endif
 
+<<<<<<< HEAD
       #if HAS_SOUND
+=======
+      #if HAS_BUZZER
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
         case 300: M300(); break;                                  // M300: Play beep tone
       #endif
 
@@ -943,7 +954,11 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
       #endif
 
       #if IS_KINEMATIC
+<<<<<<< HEAD
         case 665: M665(); break;                                  // M665: Set Kinematics parameters
+=======
+        case 665: M665(); break;                                  // M665: Set Delta/SCARA parameters
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
       #endif
 
       #if ENABLED(DELTA) || HAS_EXTRA_ENDSTOPS
@@ -1015,6 +1030,17 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
         case 919: M919(); break;                                  // M919: Set stepper Chopper Times
       #endif
 
+<<<<<<< HEAD
+=======
+      #if HAS_L64XX
+        case 122: M122(); break;                                   // M122: Report status
+        case 906: M906(); break;                                   // M906: Set or get motor drive level
+        case 916: M916(); break;                                   // M916: L6470 tuning: Increase drive level until thermal warning
+        case 917: M917(); break;                                   // M917: L6470 tuning: Find minimum current thresholds
+        case 918: M918(); break;                                   // M918: L6470 tuning: Increase speed until max or error
+      #endif
+
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
       #if HAS_MICROSTEPS
         case 350: M350(); break;                                  // M350: Set microstepping mode. Warning: Steps per unit remains unchanged. S code sets stepping mode for all drivers.
         case 351: M351(); break;                                  // M351: Toggle MS1 MS2 pins directly, S# determines MS1 or MS2, X# sets the pin high/low.

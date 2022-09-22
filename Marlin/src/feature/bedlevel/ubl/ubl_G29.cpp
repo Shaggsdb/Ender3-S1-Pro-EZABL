@@ -31,6 +31,10 @@
 #include "../../../libs/hex_print.h"
 #include "../../../module/settings.h"
 #include "../../../lcd/marlinui.h"
+<<<<<<< HEAD
+=======
+#include "../../../module/stepper.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #include "../../../module/planner.h"
 #include "../../../module/motion.h"
 #include "../../../module/probe.h"

@@ -171,7 +171,11 @@
       #define LCD_SDSS                      PD5   // 53
       #define SD_DETECT_PIN                 PD1   // 49
 
+<<<<<<< HEAD
     #elif EITHER(VIKI2, miniVIKI)
+=======
+    #elif ANY(VIKI2, miniVIKI)
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
       #define BEEPER_PIN                    PC1   // 33
 

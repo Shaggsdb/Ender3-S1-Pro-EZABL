@@ -218,7 +218,10 @@ namespace Language_zh_TW {
   LSTR MSG_MOVE_X                         = _UxGT("移動X");     // "Move X"
   LSTR MSG_MOVE_Y                         = _UxGT("移動Y");     // "Move Y"
   LSTR MSG_MOVE_Z                         = _UxGT("移動Z");     // "Move Z"
+<<<<<<< HEAD
   LSTR MSG_MOVE_N                         = _UxGT("移動Q");     // "Move @"
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   LSTR MSG_MOVE_E                         = _UxGT("擠出機");     // "Extruder"
   LSTR MSG_MOVE_EN                        = _UxGT("擠出機 *");       // "Extruder *"
   LSTR MSG_HOTEND_TOO_COLD                = _UxGT("噴嘴溫度不夠");   // "Hotend too cold"

@@ -116,6 +116,7 @@
   #undef STEALTHCHOP_E
 #endif
 
+<<<<<<< HEAD
 #if HOTENDS <= 7
   #undef E7_AUTO_FAN_PIN
   #if HOTENDS <= 6
@@ -141,6 +142,8 @@
   #endif
 #endif
 
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 /**
  * Temperature Sensors; define what sensor(s) we have.
  */
@@ -179,7 +182,12 @@
   #define REDUNDANT_TEMP_MATCH(...) 0
 #endif
 
+<<<<<<< HEAD
 #if TEMP_SENSOR_IS_MAX_TC(0)
+=======
+#if TEMP_SENSOR_0 == -5 || TEMP_SENSOR_0 == -3 || TEMP_SENSOR_0 == -2
+  #define TEMP_SENSOR_0_IS_MAX_TC 1
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   #if TEMP_SENSOR_0 == -5
     #define TEMP_SENSOR_0_IS_MAX31865 1
     #define TEMP_SENSOR_0_MAX_TC_TMIN    0
@@ -215,7 +223,12 @@
   #undef HEATER_0_MAXTEMP
 #endif
 
+<<<<<<< HEAD
 #if TEMP_SENSOR_IS_MAX_TC(1)
+=======
+#if TEMP_SENSOR_1 == -5 || TEMP_SENSOR_1 == -3 || TEMP_SENSOR_1 == -2
+  #define TEMP_SENSOR_1_IS_MAX_TC 1
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   #if TEMP_SENSOR_1 == -5
     #define TEMP_SENSOR_1_IS_MAX31865 1
     #define TEMP_SENSOR_1_MAX_TC_TMIN    0
@@ -261,7 +274,13 @@
   #undef HEATER_1_MAXTEMP
 #endif
 
+<<<<<<< HEAD
 #if TEMP_SENSOR_IS_MAX_TC(REDUNDANT)
+=======
+#if TEMP_SENSOR_REDUNDANT == -5 || TEMP_SENSOR_REDUNDANT == -3 || TEMP_SENSOR_REDUNDANT == -2
+  #define TEMP_SENSOR_REDUNDANT_IS_MAX_TC 1
+
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   #if TEMP_SENSOR_REDUNDANT == -5
     #if !REDUNDANT_TEMP_MATCH(SOURCE, E0) && !REDUNDANT_TEMP_MATCH(SOURCE, E1)
       #error "MAX31865 Thermocouples (-5) not supported for TEMP_SENSOR_REDUNDANT_SOURCE other than TEMP_SENSOR_0/TEMP_SENSOR_1 (0/1)."
@@ -303,7 +322,11 @@
     #endif
   #endif
 
+<<<<<<< HEAD
   #if (TEMP_SENSOR_IS_MAX_TC(0) && TEMP_SENSOR_REDUNDANT != TEMP_SENSOR_0) || (TEMP_SENSOR_IS_MAX_TC(1) && TEMP_SENSOR_REDUNDANT != TEMP_SENSOR_1)
+=======
+  #if (TEMP_SENSOR_0_IS_MAX_TC && TEMP_SENSOR_REDUNDANT != TEMP_SENSOR_0) || (TEMP_SENSOR_1_IS_MAX_TC && TEMP_SENSOR_REDUNDANT != TEMP_SENSOR_1)
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
     #if   TEMP_SENSOR_REDUNDANT == -5
       #error "If MAX31865 Thermocouple (-5) is used for TEMP_SENSOR_0/TEMP_SENSOR_1 then TEMP_SENSOR_REDUNDANT must match."
     #elif TEMP_SENSOR_REDUNDANT == -3
@@ -325,7 +348,11 @@
   #endif
 #endif
 
+<<<<<<< HEAD
 #if TEMP_SENSOR_IS_MAX_TC(0) || TEMP_SENSOR_IS_MAX_TC(1) || TEMP_SENSOR_IS_MAX_TC(REDUNDANT)
+=======
+#if TEMP_SENSOR_0_IS_MAX_TC || TEMP_SENSOR_1_IS_MAX_TC || TEMP_SENSOR_REDUNDANT_IS_MAX_TC
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   #define HAS_MAX_TC 1
 #endif
 #if TEMP_SENSOR_0_IS_MAX6675 || TEMP_SENSOR_1_IS_MAX6675 || TEMP_SENSOR_REDUNDANT_IS_MAX6675

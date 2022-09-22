@@ -26,7 +26,11 @@
 
 #include "../../gcode.h"
 #include "../../../feature/tmc_util.h"
+<<<<<<< HEAD
 #include "../../../module/stepper/indirection.h" // for restore_stepper_drivers
+=======
+#include "../../../module/stepper/indirection.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 /**
  * M122: Debug TMC drivers

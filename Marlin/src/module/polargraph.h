@@ -29,8 +29,11 @@
 #include "../core/macros.h"
 
 extern float segments_per_second;
+<<<<<<< HEAD
 extern xy_pos_t draw_area_min, draw_area_max;
 extern xy_float_t draw_area_size;
 extern float polargraph_max_belt_len;
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 void inverse_kinematics(const xyz_pos_t &raw);

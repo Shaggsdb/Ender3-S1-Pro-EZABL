@@ -2,7 +2,11 @@
 #
 # mfprep tag1 [tag2]
 #
+<<<<<<< HEAD
 # Find commits in bugfix-2.1.x that are not yet in 2.1.x.
+=======
+# Find commits in bugfix-2.1.x that are not yet in 2.0.x.
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #
 # Specify a version tag to start from, and optional version tag to end at.
 # For bugfix-2.1.x the tag will be prefixed by dev- to distinguish it from the version tag,

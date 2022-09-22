@@ -83,7 +83,10 @@ namespace Language_ca {
   LSTR MSG_MOVE_X                         = _UxGT("Mou X");
   LSTR MSG_MOVE_Y                         = _UxGT("Mou Y");
   LSTR MSG_MOVE_Z                         = _UxGT("Mou Z");
+<<<<<<< HEAD
   LSTR MSG_MOVE_N                         = _UxGT("Mou @");
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   LSTR MSG_MOVE_E                         = _UxGT("Extrusor");
   LSTR MSG_MOVE_EN                        = _UxGT("Extrusor *");
   LSTR MSG_MOVE_N_MM                      = _UxGT("Mou $mm");

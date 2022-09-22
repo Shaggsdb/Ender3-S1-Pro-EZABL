@@ -29,7 +29,11 @@
 
 #include "motion.h"
 
+<<<<<<< HEAD
 #if ENABLED(DWIN_LCD_PROUI)
+=======
+#if ProUIex
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   #include "../lcd/e3v2/proui/dwin.h"
 #endif
 
@@ -49,6 +53,7 @@
   #define PROBE_TRIGGERED() (READ(Z_MIN_PIN) != Z_MIN_ENDSTOP_INVERTING)
 #endif
 
+<<<<<<< HEAD
 #if ALL(DWIN_LCD_PROUI, INDIVIDUAL_AXIS_HOMING_SUBMENU, MESH_BED_LEVELING)
   #define Z_POST_CLEARANCE HMI_data.z_after_homing;
 #elif defined(Z_AFTER_HOMING)
@@ -57,6 +62,14 @@
   #define Z_POST_CLEARANCE Z_HOMING_HEIGHT
 #else
   #define Z_POST_CLEARANCE 10
+=======
+#ifdef Z_AFTER_HOMING
+   #define Z_POST_CLEARANCE Z_AFTER_HOMING
+#elif defined(Z_HOMING_HEIGHT)
+   #define Z_POST_CLEARANCE Z_HOMING_HEIGHT
+#else
+   #define Z_POST_CLEARANCE 10
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #endif
 
 #if ENABLED(PREHEAT_BEFORE_LEVELING)
@@ -161,9 +174,13 @@ public:
   #endif
 
   static void move_z_after_homing() {
+<<<<<<< HEAD
     #if ALL(DWIN_LCD_PROUI, INDIVIDUAL_AXIS_HOMING_SUBMENU, MESH_BED_LEVELING)
       do_z_clearance(HMI_data.z_after_homing, true);
     #elif Z_AFTER_HOMING
+=======
+    #ifdef Z_AFTER_HOMING
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
       do_z_clearance(Z_AFTER_HOMING, true);
     #elif BOTH(Z_AFTER_PROBING, HAS_BED_PROBE)
       move_z_after_probing();

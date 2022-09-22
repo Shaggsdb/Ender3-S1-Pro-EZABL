@@ -75,9 +75,15 @@ void set_bed_leveling_enabled(const bool enable/*=true*/) {
     planner.synchronize();
 
     // Get the corrected leveled / unleveled position
+<<<<<<< HEAD
     planner.apply_modifiers(current_position, planner.leveling_active);    // Physical position with all modifiers
     planner.leveling_active ^= true;                                       // Toggle leveling between apply and unapply
     planner.unapply_modifiers(current_position, planner.leveling_active);  // Logical position with modifiers removed
+=======
+    planner.apply_modifiers(current_position);    // Physical position with all modifiers
+    planner.leveling_active ^= true;              // Toggle leveling between apply and unapply
+    planner.unapply_modifiers(current_position);  // Logical position with modifiers removed
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
     sync_plan_position();
     _report_leveling();
@@ -155,9 +161,15 @@ void reset_bed_level() {
       LOOP_L_N(x, sx) {
         SERIAL_CHAR(' ');
         #if ProUIex
+<<<<<<< HEAD
           const float offset = ProEx.getZvalues(sy, x, y, values);
         #else
           const float offset = values[x * sy + y];
+=======
+          const float offset = ProEx.getZvalues(sx, x, y, values);
+        #else
+          const float offset = values[x * sx + y];
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
         #endif
         if (!isnan(offset)) {
           if (offset >= 0) SERIAL_CHAR('+');

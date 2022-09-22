@@ -28,6 +28,7 @@
 // Calculated using 4.7kohm pullup, voltage divider math, and manufacturer provided temp/resistance
 constexpr temp_entry_t temptable_5[] PROGMEM = {
   { OV(   1), 713 },
+<<<<<<< HEAD
 
 // Extended table from SteinhartHart curvefit
   { OV( 09.92), 350 },
@@ -46,6 +47,12 @@ constexpr temp_entry_t temptable_5[] PROGMEM = {
   // { OV(  20), 290 },
   // { OV(  23), 280 },
   // { OV(  27), 270 },
+=======
+  { OV(  17), 300 }, // top rating 300C
+  { OV(  20), 290 },
+  { OV(  23), 280 },
+  { OV(  27), 270 },
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   { OV(  31), 260 },
   { OV(  37), 250 },
   { OV(  43), 240 },

@@ -54,6 +54,7 @@ void Babystep::add_mm(const AxisEnum axis, const_float_t mm) {
   add_steps(axis, mm * planner.settings.axis_steps_per_mm[axis]);
 }
 
+<<<<<<< HEAD
 #if ENABLED(BD_SENSOR)
   void Babystep::set_mm(const AxisEnum axis, const_float_t mm) {
     //if (DISABLED(BABYSTEP_WITHOUT_HOMING) && axes_should_home(_BV(axis))) return;
@@ -66,6 +67,8 @@ void Babystep::add_mm(const AxisEnum axis, const_float_t mm) {
   }
 #endif
 
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 void Babystep::add_steps(const AxisEnum axis, const int16_t distance) {
   if (DISABLED(BABYSTEP_WITHOUT_HOMING) && axes_should_home(_BV(axis))) return;
 

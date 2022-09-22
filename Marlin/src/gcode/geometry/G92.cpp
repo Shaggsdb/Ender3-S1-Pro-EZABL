@@ -22,6 +22,10 @@
 
 #include "../gcode.h"
 #include "../../module/motion.h"
+<<<<<<< HEAD
+=======
+#include "../../module/stepper.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 #if ENABLED(I2C_POSITION_ENCODERS)
   #include "../../feature/encoder_i2c.h"

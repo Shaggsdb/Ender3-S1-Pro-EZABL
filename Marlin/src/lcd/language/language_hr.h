@@ -78,10 +78,13 @@ namespace Language_hr {
   LSTR MSG_LEVEL_BED                      = _UxGT("Niveliraj bed");
   LSTR MSG_MOVE_X                         = _UxGT("Miči X");
   LSTR MSG_MOVE_Y                         = _UxGT("Miči Y");
+<<<<<<< HEAD
   LSTR MSG_MOVE_Z                         = _UxGT("Miči Z");
   LSTR MSG_MOVE_N                         = _UxGT("Miči @");
   LSTR MSG_MOVE_E                         = _UxGT("Miči E");
   LSTR MSG_MOVE_EN                        = _UxGT("Miči *");
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   LSTR MSG_MOVE_N_MM                      = _UxGT("Miči $mm");
   LSTR MSG_MOVE_01MM                      = _UxGT("Miči 0.1mm");
   LSTR MSG_MOVE_1MM                       = _UxGT("Miči 1mm");

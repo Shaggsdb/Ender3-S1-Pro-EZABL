@@ -38,12 +38,15 @@
   #define MARLIN_EEPROM_SIZE    EEPROM_PAGE_SIZE  // 2K
 #endif
 
+<<<<<<< HEAD
 #if ENABLED(BD_SENSOR)
   #define I2C_BD_SDA_PIN                    PC6
   #define I2C_BD_SCL_PIN                    PB2
   #define I2C_BD_DELAY 10                         // (seconds)
 #endif
 
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 //
 // Servos
 //
@@ -185,6 +188,7 @@
 
   /** FYSETC TFT TFT81050 display pinout
    *
+<<<<<<< HEAD
    *                   Board                                   Display
    *                   ------                                  ------
    * (SD_DET)    PA15 | 1  2 | PB6 (BEEPER)  (SPI1-MISO) MISO | 1  2 | SCK   (SPI1-SCK)
@@ -194,10 +198,22 @@
    *             GND  | 9 10 |  5V                        GND | 9 10 | 5V
    *                   ------                                  ------
    *                    EXP1                                    EXP1
+=======
+   *               Board                                     Display
+   *               -----                                      -----
+   *           5V | 1 2 | GND               (SPI1-MISO) MISO | 1 2 | SCK   (SPI1-SCK)
+   * (FREE)   PB7 | 3 4 | PB8  (LCD_CS)     (PA9)  MOD_RESET | 3 4 | SD_CS (PA10)
+   * (FREE)   PB9 | 5 6   PA10 (SD_CS)      (PB8)     LCD_CS | 5 6   MOSI  (SPI1-MOSI)
+   *        RESET | 7 8 | PA9  (MOD_RESET)  (PA15)    SD_DET | 7 8 | RESET
+   * (BEEPER) PB6 | 9 10| PA15 (SD_DET)                  GND | 9 10| 5V
+   *               -----                                      -----
+   *                EXP1                                       EXP1
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
    *
    * Needs custom cable:
    *
    *    Board   Adapter   Display
+<<<<<<< HEAD
    *   ----------------------------------
    *   EXP1-10 ---------- EXP1-10  5V
    *   EXP1-9 ----------- EXP1-9   GND
@@ -209,6 +225,19 @@
    *   EXP1-3 ----------- EXP1-3   MOD_RST
    *   SPI1-1 ----------- EXP1-1   MISO
    *   EXP1-1 ----------- EXP1-7   SD_DET
+=======
+   *           _________
+   *   EXP1-1 ----------- EXP1-10
+   *   EXP1-2 ----------- EXP1-9
+   *   SPI1-4 ----------- EXP1-6
+   *   EXP1-4 ----------- EXP1-5
+   *   SP11-3 ----------- EXP1-2
+   *   EXP1-6 ----------- EXP1-4
+   *   EXP1-7 ----------- EXP1-8
+   *   EXP1-8 ----------- EXP1-3
+   *   SPI1-1 ----------- EXP1-1
+   *  EXP1-10 ----------- EXP1-7
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
    */
 
   #define CLCD_SPI_BUS                         1  // SPI1 connector

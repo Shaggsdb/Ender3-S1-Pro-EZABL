@@ -67,7 +67,11 @@ cutter_frequency_t SpindleLaser::frequency;                           // PWM fre
 void SpindleLaser::init() {
   #if ENABLED(SPINDLE_SERVO)
     servo[SPINDLE_SERVO_NR].move(SPINDLE_SERVO_MIN);
+<<<<<<< HEAD
   #elif PIN_EXISTS(SPINDLE_LASER_ENA)
+=======
+  #else
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
     OUT_WRITE(SPINDLE_LASER_ENA_PIN, !SPINDLE_LASER_ACTIVE_STATE);    // Init spindle to off
   #endif
   #if ENABLED(SPINDLE_CHANGE_DIR)
@@ -104,16 +108,24 @@ void SpindleLaser::init() {
   }
 
   void SpindleLaser::set_ocr(const uint8_t ocr) {
+<<<<<<< HEAD
     #if PIN_EXISTS(SPINDLE_LASER_ENA)
       WRITE(SPINDLE_LASER_ENA_PIN,  SPINDLE_LASER_ACTIVE_STATE); // Cutter ON
     #endif
+=======
+    WRITE(SPINDLE_LASER_ENA_PIN,  SPINDLE_LASER_ACTIVE_STATE); // Cutter ON
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
     _set_ocr(ocr);
   }
 
   void SpindleLaser::ocr_off() {
+<<<<<<< HEAD
     #if PIN_EXISTS(SPINDLE_LASER_ENA)
       WRITE(SPINDLE_LASER_ENA_PIN, !SPINDLE_LASER_ACTIVE_STATE); // Cutter OFF
     #endif
+=======
+    WRITE(SPINDLE_LASER_ENA_PIN, !SPINDLE_LASER_ACTIVE_STATE); // Cutter OFF
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
     _set_ocr(0);
   }
 #endif // SPINDLE_LASER_USE_PWM

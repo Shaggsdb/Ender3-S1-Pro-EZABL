@@ -159,6 +159,7 @@ void DiskIODriver_USBFlash::idle() {
       static uint8_t laststate = 232;
       if (task_state != laststate) {
         laststate = task_state;
+<<<<<<< HEAD
         #define UHS_USB_DEBUG(x,y) case UHS_STATE(x): SERIAL_ECHOLNPGM(y); break
         switch (task_state) {
           UHS_USB_DEBUG(IDLE, "IDLE");
@@ -171,6 +172,20 @@ void DiskIODriver_USBFlash::idle() {
           UHS_USB_DEBUG(CONFIGURING, "CONFIGURING");
           UHS_USB_DEBUG(CONFIGURING_DONE, "CONFIGURING_DONE");
           UHS_USB_DEBUG(RUNNING, "RUNNING");
+=======
+        #define UHS_USB_DEBUG(x) case UHS_STATE(x): SERIAL_ECHOLNPGM(#x); break
+        switch (task_state) {
+          UHS_USB_DEBUG(IDLE);
+          UHS_USB_DEBUG(RESET_DEVICE);
+          UHS_USB_DEBUG(RESET_NOT_COMPLETE);
+          UHS_USB_DEBUG(DEBOUNCE);
+          UHS_USB_DEBUG(DEBOUNCE_NOT_COMPLETE);
+          UHS_USB_DEBUG(WAIT_SOF);
+          UHS_USB_DEBUG(ERROR);
+          UHS_USB_DEBUG(CONFIGURING);
+          UHS_USB_DEBUG(CONFIGURING_DONE);
+          UHS_USB_DEBUG(RUNNING);
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
           default:
             SERIAL_ECHOLNPGM("UHS_USB_HOST_STATE: ", task_state);
             break;

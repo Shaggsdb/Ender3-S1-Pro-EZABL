@@ -22,7 +22,10 @@
 
 #if ENABLED(DWIN_LCD_PROUI)
 
+<<<<<<< HEAD
 #include "../../../MarlinCore.h" // for wait_for_user
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #include "dwin.h"
 #include "dwinui.h"
 #include "dwin_popup.h"

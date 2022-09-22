@@ -17,7 +17,11 @@ BRANCH=${INFO[5]}
 
 opensite() {
   URL="http://127.0.0.1:4000/"
+<<<<<<< HEAD
   OPEN=$( which gnome-open xdg-open open | head -n1 )
+=======
+  OPEN=$(echo $(which gnome-open xdg-open open) | awk '{ print $1 }')
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   if [ -z "$OPEN" ]; then
     echo "Can't find a tool to open the URL:"
     echo $URL

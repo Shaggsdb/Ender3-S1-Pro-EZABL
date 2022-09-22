@@ -131,7 +131,11 @@
       #error "LCD_I2C_PANELOLU2 is not supported."
     #elif ENABLED(LCD_I2C_VIKI)
       #error "LCD_I2C_VIKI is not supported."
+<<<<<<< HEAD
     #elif EITHER(VIKI2, miniVIKI)
+=======
+    #elif ANY(VIKI2, miniVIKI)
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
       #error "VIKI2 / miniVIKI is not supported."
     #elif ENABLED(ELB_FULL_GRAPHIC_CONTROLLER)
       #error "ELB_FULL_GRAPHIC_CONTROLLER is not supported."

@@ -11,6 +11,10 @@
 #include "dac_dac084s085.h"
 
 #include "../../MarlinCore.h"
+<<<<<<< HEAD
+=======
+#include "../../module/stepper.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #include "../../HAL/shared/Delay.h"
 
 dac084s085::dac084s085() { }

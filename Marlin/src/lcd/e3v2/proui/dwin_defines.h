@@ -1,8 +1,13 @@
 /**
  * DWIN general defines and data structs for PRO UI
  * Author: Miguel A. Risco-Castillo (MRISCOC)
+<<<<<<< HEAD
  * Version: 3.12.3
  * Date: 2022/08/08
+=======
+ * Version: 3.11.3
+ * Date: 2022/02/28
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as 
@@ -21,6 +26,17 @@
 
 #pragma once
 
+<<<<<<< HEAD
+=======
+// #define ProUIex 1
+// #define HAS_GCODE_PREVIEW 1
+// #define HAS_TOOLBAR 1
+// #define HAS_PIDPLOT 1
+// #define HAS_ESDIAG 1
+// #define HAS_CGCODE 1
+// #define HAS_LOCKSCREEN 1
+
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 // #define DEBUG_DWIN 1
 // #define NEED_HEX_PRINT 1
 
@@ -28,6 +44,7 @@
   #define DASH_REDRAW 1
 #endif
 
+<<<<<<< HEAD
 #if DISABLED(PROBE_MANUALLY) && ANY(AUTO_BED_LEVELING_BILINEAR, AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_3POINT, AUTO_BED_LEVELING_UBL)
   #define HAS_ONESTEP_LEVELING 1
 #endif
@@ -38,6 +55,53 @@
 
 #if ANY(BABYSTEPPING, HAS_BED_PROBE, HAS_WORKSPACE_OFFSET)
   #define HAS_ZOFFSET_ITEM 1
+=======
+#if DISABLED(LIMITED_MAX_FR_EDITING)
+  #warning "LIMITED_MAX_FR_EDITING can be enabled with ProUI."
+#endif
+#if DISABLED(LIMITED_MAX_ACCEL_EDITING)
+  #warning "LIMITED_MAX_ACCEL_EDITING can be enabled with ProUI."
+#endif
+#if ENABLED(CLASSIC_JERK) && DISABLED(LIMITED_JERK_EDITING)
+  #warning "LIMITED_JERK_EDITING can be enabled with ProUI."
+#endif
+#if DISABLED(FILAMENT_RUNOUT_SENSOR)
+  #warning "FILAMENT_RUNOUT_SENSOR can be enabled with ProUI."
+#endif
+
+#if (!MB(CREALITY_V24S1_301F4) && ENABLED(AUTO_BED_LEVELING_UBL)) // Disabled for S1 F4 RCT6 for free program memory
+  #if DISABLED(INDIVIDUAL_AXIS_HOMING_SUBMENU)
+    #warning "INDIVIDUAL_AXIS_HOMING_SUBMENU can be enabled with ProUI."
+  #endif
+  #if DISABLED(LCD_SET_PROGRESS_MANUALLY)
+    #warning "LCD_SET_PROGRESS_MANUALLY can be enabled with ProUI."
+  #endif
+  #if DISABLED(STATUS_MESSAGE_SCROLLING)
+    #warning "STATUS_MESSAGE_SCROLLING can be enabled with ProUI."
+  #endif
+  #if DISABLED(BAUD_RATE_GCODE)
+    #warning "BAUD_RATE_GCODE can be enabled with ProUI."
+  #endif
+  #if DISABLED(SOUND_MENU_ITEM)
+    #warning "SOUND_MENU_ITEM can be enabled with ProUI."
+  #endif
+  #if DISABLED(PRINTCOUNTER)
+    #warning "PRINTCOUNTER can be enabled with ProUI."
+  #endif
+#endif
+
+#if DISABLED(MESH_EDIT_MENU)
+  #warning "MESH_EDIT_MENU can be enabled with ProUI."
+#endif
+#if ENABLED(HAS_GCODE_PREVIEW) && DISABLED(ProUIex)
+  #error "HAS_GCODE_PREVIEW requires ProUIex."
+#endif
+#if ENABLED(HAS_TOOLBAR) && DISABLED(ProUIex)
+  #error "HAS_TOOLBAR requires ProUIex."
+#endif
+#if ENABLED(HAS_PIDPLOT) && DISABLED(ProUIex)
+  #error "HAS_PIDPLOT requires ProUIex."
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #endif
 
 #define Def_Background_Color  RGB( 1, 12,  8)
@@ -65,6 +129,7 @@
 #if ENABLED(CASELIGHT_USES_BRIGHTNESS)
   #define Def_CaseLight_Brightness 255
 #endif
+<<<<<<< HEAD
 #ifdef Z_AFTER_HOMING
   #define DEF_Z_AFTER_HOMING Z_AFTER_HOMING
 #else
@@ -91,6 +156,64 @@
   #include "../../../core/types.h"
 
   #if HAS_TOOLBAR
+=======
+
+#include <stddef.h>
+#include "../../../core/types.h"
+#include "../common/dwin_color.h"
+
+typedef struct {
+  // Color settings
+  uint16_t Background_Color = Def_Background_Color;
+  uint16_t Cursor_color = Def_Cursor_color;
+  uint16_t TitleBg_color = Def_TitleBg_color;
+  uint16_t TitleTxt_color = Def_TitleTxt_color;
+  uint16_t Text_Color = Def_Text_Color;
+  uint16_t Selected_Color = Def_Selected_Color;
+  uint16_t SplitLine_Color = Def_SplitLine_Color;
+  uint16_t Highlight_Color = Def_Highlight_Color;
+  uint16_t StatusBg_Color = Def_StatusBg_Color;
+  uint16_t StatusTxt_Color = Def_StatusTxt_Color;
+  uint16_t PopupBg_color = Def_PopupBg_color;
+  uint16_t PopupTxt_Color = Def_PopupTxt_Color;
+  uint16_t AlertBg_Color = Def_AlertBg_Color;
+  uint16_t AlertTxt_Color = Def_AlertTxt_Color;
+  uint16_t PercentTxt_Color = Def_PercentTxt_Color;
+  uint16_t Barfill_Color = Def_Barfill_Color;
+  uint16_t Indicator_Color = Def_Indicator_Color;
+  uint16_t Coordinate_Color = Def_Coordinate_Color;
+  // Temperatures
+  #if HAS_HOTEND && defined(PREHEAT_1_TEMP_HOTEND)
+    int16_t HotendPidT = PREHEAT_1_TEMP_HOTEND;
+  #endif
+  #if defined(PREHEAT_1_TEMP_BED)
+    int16_t BedPidT = PREHEAT_1_TEMP_BED;
+  #endif
+  #if HAS_HOTEND || HAS_HEATED_BED
+    int16_t PidCycles = 10;
+  #endif
+  #if ENABLED(PREVENT_COLD_EXTRUSION)
+    int16_t ExtMinT = EXTRUDE_MINTEMP;
+  #endif
+  int16_t BedLevT = LEVELING_BED_TEMP;
+  TERN_(BAUD_RATE_GCODE, bool Baud115K = false);
+  bool FullManualTramming = false;
+  // Led
+  #if ENABLED(MESH_BED_LEVELING)
+    float ManualZOffset = 0;
+  #endif
+  #if BOTH(LED_CONTROL_MENU, HAS_COLOR_LEDS)
+    uint32_t LED_Color = Def_Leds_Color;
+  #endif
+} HMI_data_t;
+
+extern HMI_data_t HMI_data;
+
+#if ProUIex
+
+  #if HAS_TOOLBAR
+    #define TBOptCount 12                 // Total of assignable functions
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
     #define TBMaxOpt 5                    // Amount of shortcuts on screen
     #if HAS_BED_PROBE
       #define DEF_TBOPT {0, 1, 2, 3, 4}   // Default shorcuts for ALB/UBL
@@ -146,3 +269,8 @@
   #define INVERT_E0_DIR PRO_data.Invert_E0
 
 #endif  // ProUIex
+<<<<<<< HEAD
+=======
+
+static constexpr size_t eeprom_data_size = sizeof(HMI_data_t) + TERN0(ProUIex, sizeof(PRO_data_t));
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436

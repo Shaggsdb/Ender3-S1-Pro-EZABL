@@ -25,7 +25,11 @@
 #if ENABLED(SD_ABORT_ON_ENDSTOP_HIT)
 
 #include "../gcode.h"
+<<<<<<< HEAD
 #include "../../module/planner.h"
+=======
+#include "../../module/stepper.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 /**
  * M540: Set whether SD card print should abort on endstop hit (M540 S<0|1>)

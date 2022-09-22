@@ -252,7 +252,11 @@ def resolve_path(path):
     while 0 <= path.find('../'):
       end = path.find('../') - 1
       start = path.find('/')
+<<<<<<< HEAD
       while 0 <= path.find('/', start) < end:
+=======
+      while 0 <= path.find('/', start) and end > path.find('/', start):
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
         start = path.find('/', start) + 1
       path = path[0:start] + path[end + 4:]
 
@@ -674,7 +678,11 @@ def line_print(line_input):
         if 0 == highlight[1]:
           found_1 = text.find(' ')
           found_tab = text.find('\t')
+<<<<<<< HEAD
           if not (0 <= found_1 <= found_tab):
+=======
+          if found_1 < 0 or found_1 > found_tab:
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
             found_1 = found_tab
           write_to_screen_queue(text[:found_1 + 1])
           for highlight_2 in highlights:
@@ -684,7 +692,11 @@ def line_print(line_input):
             if found >= 0:
               found_space = text.find(' ', found_1 + 1)
               found_tab = text.find('\t', found_1 + 1)
+<<<<<<< HEAD
               if not (0 <= found_space <= found_tab):
+=======
+              if found_space < 0 or found_space > found_tab:
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
                 found_space = found_tab
               found_right = text.find(']', found + 1)
               write_to_screen_queue(text[found_1 + 1:found_space + 1], highlight[2])
@@ -701,7 +713,11 @@ def line_print(line_input):
         break
     if did_something == False:
       r_loc = text.find('\r') + 1
+<<<<<<< HEAD
       if 0 < r_loc < len(text):  # need to split this line
+=======
+      if r_loc > 0 and r_loc < len(text):  # need to split this line
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
         text = text.split('\r')
         for line in text:
           if line != '':

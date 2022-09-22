@@ -39,7 +39,10 @@
 void GcodeSuite::M75() {
   startOrResumeJob();
   #if ENABLED(DWIN_LCD_PROUI)
+<<<<<<< HEAD
     HMI_flag.config_flag = false;
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
     DWIN_Print_Started(false);
     if (!IS_SD_PRINTING()) DWIN_Print_Header(parser.string_arg && parser.string_arg[0] ? parser.string_arg : GET_TEXT(MSG_HOST_START_PRINT));
   #endif

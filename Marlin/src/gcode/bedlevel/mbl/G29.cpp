@@ -36,7 +36,11 @@
 #include "../../../libs/buzzer.h"
 #include "../../../lcd/marlinui.h"
 #include "../../../module/motion.h"
+<<<<<<< HEAD
 #include "../../../module/planner.h"
+=======
+#include "../../../module/stepper.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 #if ENABLED(EXTENSIBLE_UI)
   #include "../../../lcd/extui/ui_api.h"

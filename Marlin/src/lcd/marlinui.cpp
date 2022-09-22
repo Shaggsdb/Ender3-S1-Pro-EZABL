@@ -119,9 +119,23 @@ constexpr uint8_t epps = ENCODER_PULSES_PER_STEP;
   bool MarlinUI::sound_on = ENABLED(SOUND_ON_DEFAULT);
 #endif
 
+<<<<<<< HEAD
 #if ENABLED(PCA9632_BUZZER)
   void MarlinUI::buzz(const long duration, const uint16_t freq) {
     if (sound_on) PCA9632_buzz(duration, freq);
+=======
+#if EITHER(PCA9632_BUZZER, HAS_BEEPER)
+  #if ENABLED(PCA9632_BUZZER)
+    #include "../feature/leds/pca9632.h"
+  #endif
+  void MarlinUI::buzz(const long duration, const uint16_t freq) {
+    if (!sound_on) return;
+    #if ENABLED(PCA9632_BUZZER)
+      PCA9632_buzz(duration, freq);
+    #elif HAS_BEEPER
+      buzzer.tone(duration, freq);
+    #endif
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   }
 #endif
 
@@ -675,7 +689,11 @@ void MarlinUI::init() {
       if (old_frm != new_frm) {
         feedrate_percentage = new_frm;
         encoderPosition = 0;
+<<<<<<< HEAD
         #if BOTH(HAS_SOUND, BEEP_ON_FEEDRATE_CHANGE)
+=======
+        #if BOTH(HAS_BUZZER, BEEP_ON_FEEDRATE_CHANGE)
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
           static millis_t next_beep;
           #ifndef GOT_MS
             const millis_t ms = millis();
@@ -733,12 +751,20 @@ void MarlinUI::init() {
       UNUSED(clear_buttons);
     #endif
 
+<<<<<<< HEAD
     chirp();  // Buzz and wait. Is the delay needed for buttons to settle?
 
     #if HAS_CHIRP && HAS_MARLINUI_MENU
       #if HAS_BEEPER
         for (int8_t i = 5; i--;) { buzzer.tick(); delay(2); }
       #else
+=======
+    #if HAS_CHIRP
+      chirp(); // Buzz and wait. Is the delay needed for buttons to settle?
+      #if BOTH(HAS_MARLINUI_MENU, HAS_BEEPER)
+        for (int8_t i = 5; i--;) { buzzer.tick(); delay(2); }
+      #elif HAS_MARLINUI_MENU
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
         delay(10);
       #endif
     #endif

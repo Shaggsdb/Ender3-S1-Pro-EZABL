@@ -23,21 +23,30 @@
 
 #if ENABLED(DWIN_LCD_PROUI)
 
+<<<<<<< HEAD
 #include "../../../MarlinCore.h" // for wait_for_user
 #include "../../../core/types.h"
 #include "../../../gcode/gcode.h"
 #include "../../../libs/buzzer.h"
 #include "../../marlinui.h"
+=======
+#include "../../../core/types.h"
+#include "../../../gcode/gcode.h"
+#include "../../../libs/buzzer.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 #include "dwin.h"
 #include "dwinui.h"
 #include "dwin_lcd.h"
 #include "custom_gcodes.h"
 
+<<<<<<< HEAD
 #if ENABLED(POWER_LOSS_RECOVERY)
   #include "../../../feature/powerloss.h"
 #endif
 
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 //=============================================================================
 // Extended G-CODES 
 //=============================================================================
@@ -47,6 +56,7 @@ void CError() {
   SERIAL_ECHOLNPGM(" This G-code is not implemented in firmware");
 }
 
+<<<<<<< HEAD
 // Mark the G-code file as a Configuration file
 void C10() {
   HMI_flag.config_flag = true;
@@ -55,6 +65,8 @@ void C10() {
   if (checkkey == PrintProcess) Goto_Main_Menu();
 }
 
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 // C11 Set color for UI element E
 void C11() {
   const int16_t E = parser.seenval('E') ? parser.value_byte() : 0; // UI element
@@ -85,7 +97,10 @@ void C108() {
 #endif
 
 #if DEBUG_DWIN
+<<<<<<< HEAD
   #include "../../../module/planner.h"
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   void C997() {
     #if ENABLED(POWER_LOSS_RECOVERY)
       if (IS_SD_PRINTING() && recovery.enabled) {
@@ -102,7 +117,10 @@ void C108() {
 // Special Creality DWIN GCodes
 void custom_gcode(const int16_t codenum) {
   switch(codenum) {
+<<<<<<< HEAD
     case 10: C10(); break;             // Mark the G-code file as a Configuration file
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
     case 11: C11(); break;             // Set color for UI element E
     case 108: C108(); break;           // Cancel a Wait for User without an Emergecy Parser
     #if HAS_LOCKSCREEN
@@ -115,7 +133,11 @@ void custom_gcode(const int16_t codenum) {
       #if HAS_MESH
         case 29: ProEx.C29(); break;        // Set probing area and mesh leveling settings
       #endif
+<<<<<<< HEAD
       case 100: ProEx.C100(); break;        // Change Physical minimums
+=======
+      case 100: ProEx.C100(); break;        // Change Physical manimums
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
       case 101: ProEx.C101(); break;        // Change Physical maximums
       case 102: ProEx.C102(); break;        // Change Bed size
       case 104: ProEx.C104(); break;        // Set extruder max temperature (limited by maxtemp in thermistor table)
@@ -127,7 +149,13 @@ void custom_gcode(const int16_t codenum) {
         case 412: ProEx.C412(); break;      // Set runout sensor active mode
       #endif
       case 562: ProEx.C562(); break;        // Invert Extruder
+<<<<<<< HEAD
       case 851: ProEx.C851(); break;        // If has a probe set z feed rate and multiprobe, if not, set manual z-offset
+=======
+      #if HAS_BED_PROBE
+        case 851: ProEx.C851(); break;      // Set z feed rate of the probe mesh leveling
+      #endif
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
       #if HAS_TOOLBAR
         case 810: ProEx.C810(); break;      // Config toolbar
       #endif
@@ -139,6 +167,7 @@ void custom_gcode(const int16_t codenum) {
 void custom_gcode_report(const bool forReplay/*=true*/) {
   #if ProUIex
     #if HAS_MESH
+<<<<<<< HEAD
       ProEx.C29_report(forReplay);
     #endif
     ProEx.C100_report(forReplay);
@@ -154,6 +183,23 @@ void custom_gcode_report(const bool forReplay/*=true*/) {
       ProEx.C562_report(forReplay);
     #if HAS_BED_PROBE
       ProEx.C851_report(forReplay);
+=======
+      ProEx.C29_report(forReplay);    // Set amount of grid points of the mesh leveling
+    #endif
+    ProEx.C100_report(forReplay);     // Change Physical minimums
+    ProEx.C101_report(forReplay);     // Change Physical maximums
+    ProEx.C102_report(forReplay);     // Change Bed size
+    ProEx.C104_report(forReplay);     // Set extruder max temperature
+    #if ENABLED(NOZZLE_PARK_FEATURE)
+      ProEx.C125_report(forReplay);   // Set park position
+    #endif
+    #if HAS_FILAMENT_SENSOR
+      ProEx.C412_report(forReplay);   // Set runout sensor active mode
+    #endif
+      ProEx.C562_report(forReplay);   // Invert Extruder
+    #if HAS_BED_PROBE
+      ProEx.C851_report(forReplay);   // Set mesh inset and z feed rate of the probe mesh leveling
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
     #endif
   #endif
 }

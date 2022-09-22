@@ -59,7 +59,11 @@ void E_NotifyStr(char const * msg, int lvl) {
 void E_Notify(uint8_t b, int lvl) {
   if (UsbDEBUGlvl < lvl) return;
   USB_HOST_SERIAL.print(b
+<<<<<<< HEAD
     #if !defined(ARDUINO) && !defined(ARDUINO_ARCH_LPC176X)
+=======
+    #if !defined(ARDUINO) || ARDUINO < 100
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
       , DEC
     #endif
   );

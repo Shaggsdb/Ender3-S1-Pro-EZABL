@@ -22,7 +22,11 @@
 
 #include "../../inc/MarlinConfig.h"
 
+<<<<<<< HEAD
 #if HAS_SOUND
+=======
+#if HAS_BUZZER
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 #include "../gcode.h"
 
@@ -42,4 +46,8 @@ void GcodeSuite::M300() {
   BUZZ(duration, frequency);
 }
 
+<<<<<<< HEAD
 #endif // HAS_SOUND
+=======
+#endif // HAS_BUZZER
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436

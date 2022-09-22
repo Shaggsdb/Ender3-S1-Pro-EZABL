@@ -1,8 +1,13 @@
 /**
  * ToolBar for PRO UI
  * Author: Miguel A. Risco-Castillo (MRISCOC)
+<<<<<<< HEAD
  * version: 1.3.1
  * Date: 2022/08/05
+=======
+ * version: 1.2.1
+ * Date: 2022/07/10
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as
@@ -39,14 +44,20 @@ typedef struct {
   void (*onClick)() = nullptr;
 } TBItem_t;
 extern TBItem_t TBItem;
+<<<<<<< HEAD
 extern TBItem_t TBItemA[];
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 class ToolBarClass : public MenuClass {
 public:
   void onScroll(bool dir) override;
   void draw() override;
   void (*onExit)() = nullptr;
+<<<<<<< HEAD
   uint8_t OptCount();
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 };
 extern ToolBarClass ToolBar;
 
@@ -54,4 +65,8 @@ void onDrawTBItem(MenuItemClass* menuitem, int8_t line);
 void UpdateTBSetupItem(MenuItemClass* menuitem, uint8_t val);
 void DrawTBSetupItem(bool focused, uint8_t line);
 void Draw_ToolBar(bool force = false);
+<<<<<<< HEAD
 void TBGetItem(uint8_t item);
+=======
+
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436

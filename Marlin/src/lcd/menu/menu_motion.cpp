@@ -74,7 +74,10 @@ void lcd_move_axis(const AxisEnum axis) {
   }
   ui.encoderPosition = 0;
   if (ui.should_draw()) {
+<<<<<<< HEAD
     MenuEditItemBase::itemIndex = axis;
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
     const float pos = ui.manual_move.axis_value(axis);
     if (parser.using_inch_units()) {
       const float imp_pos = LINEAR_UNIT(pos);
@@ -85,6 +88,12 @@ void lcd_move_axis(const AxisEnum axis) {
   }
 }
 
+<<<<<<< HEAD
+=======
+// Move Z easy accessor
+void lcd_move_z() { lcd_move_axis(Z_AXIS); }
+
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #if E_MANUAL
 
   static void lcd_move_e(TERN_(MULTI_E_MANUAL, const int8_t eindex=active_extruder)) {
@@ -116,7 +125,11 @@ void lcd_move_axis(const AxisEnum axis) {
 
   void _goto_manual_move_z(const_float_t scale) {
     ui.manual_move.menu_scale = scale;
+<<<<<<< HEAD
     ui.goto_screen([]{ lcd_move_axis(Z_AXIS); });
+=======
+    ui.goto_screen(lcd_move_z);
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   }
 
 #endif

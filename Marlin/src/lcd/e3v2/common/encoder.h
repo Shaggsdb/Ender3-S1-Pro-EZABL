@@ -45,7 +45,11 @@ typedef enum {
   ENCODER_DIFF_ENTER = 3   // click
 } EncoderState;
 
+<<<<<<< HEAD
 #define ENCODER_WAIT_MS 10
+=======
+#define ENCODER_WAIT_MS 20
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 // Encoder initialization
 void Encoder_Configuration();

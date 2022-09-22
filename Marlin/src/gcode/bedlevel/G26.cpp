@@ -107,6 +107,10 @@
 
 #include "../../MarlinCore.h"
 #include "../../module/planner.h"
+<<<<<<< HEAD
+=======
+#include "../../module/stepper.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #include "../../module/motion.h"
 #include "../../module/tool_change.h"
 #include "../../module/temperature.h"
@@ -305,7 +309,11 @@ typedef struct {
         LIMIT(e.x, X_MIN_POS + 1, X_MAX_POS - 1);
       #endif
 
+<<<<<<< HEAD
       if (position_is_reachable(s) && position_is_reachable(e))
+=======
+      if (position_is_reachable(s.x, s.y) && position_is_reachable(e.x, e.y))
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
         print_line_from_here_to_there(s, e);
     }
   }

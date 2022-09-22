@@ -132,7 +132,11 @@
       constexpr int16_t sns_angles[2] = SWITCHING_NOZZLE_SERVO_ANGLES;
       planner.synchronize();
       servo[sns_index[e]].move(sns_angles[angle_index]);
+<<<<<<< HEAD
       safe_delay(SWITCHING_NOZZLE_SERVO_DWELL);
+=======
+      safe_delay(500);
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
     }
 
     void lower_nozzle(const uint8_t e) { _move_nozzle_servo(e, 0); }
@@ -143,7 +147,11 @@
     void move_nozzle_servo(const uint8_t angle_index) {
       planner.synchronize();
       servo[SWITCHING_NOZZLE_SERVO_NR].move(servo_angles[SWITCHING_NOZZLE_SERVO_NR][angle_index]);
+<<<<<<< HEAD
       safe_delay(SWITCHING_NOZZLE_SERVO_DWELL);
+=======
+      safe_delay(500);
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
     }
 
   #endif

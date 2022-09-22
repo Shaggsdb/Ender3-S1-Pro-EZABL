@@ -143,6 +143,7 @@ namespace DirectStepping {
           // special case for 8-bit, check if rolled back to 0
           if (Cfg::DIRECTIONAL || !write_page_size) { // full 256 bytes
             if (write_byte_idx) return true;
+<<<<<<< HEAD
           }
           else if (write_byte_idx < write_page_size)
             return true;
@@ -153,6 +154,16 @@ namespace DirectStepping {
         }
         else if (write_byte_idx < write_page_size)
           return true;
+=======
+          } else {
+            if (write_byte_idx < write_page_size) return true;
+          }
+        } else if (Cfg::DIRECTIONAL) {
+          if (write_byte_idx != Cfg::PAGE_SIZE) return true;
+        } else {
+          if (write_byte_idx < write_page_size) return true;
+        }
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
         state = State::CHECKSUM;
         return true;
@@ -163,10 +174,18 @@ namespace DirectStepping {
         return true;
       }
       case State::UNFAIL:
+<<<<<<< HEAD
         if (c == 0)
           set_page_state(write_page_idx, PageState::FREE);
         else
           fatal_error = true;
+=======
+        if (c == 0) {
+          set_page_state(write_page_idx, PageState::FREE);
+        } else {
+          fatal_error = true;
+        }
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
         state = State::MONITOR;
         return true;
     }

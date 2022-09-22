@@ -1,8 +1,13 @@
 /**
  * DWIN Enhanced implementation for PRO UI
  * Author: Miguel A. Risco-Castillo (MRISCOC)
+<<<<<<< HEAD
  * Version: 3.19.1
  * Date: 2022/08/18
+=======
+ * Version: 3.18.1
+ * Date: 2022/07/05
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as
@@ -28,6 +33,7 @@
 #include "dwin_lcd.h"
 
 // Extra Icons
+<<<<<<< HEAD
 // CI(0,I) uses custom library  9.ICO
 // CI(1,I) uses custom library 10.ICO
 #define CI(L,I) (I TERN_(HAS_CUSTOMICONS, + L*100))
@@ -147,6 +153,88 @@
 #define ICON_MPCHeater         CI(1,ICON_Temperature)
 #define ICON_MPCHeatCap        CI(1,ICON_SetBedTemp)
 #define ICON_MPCFan            CI(1,ICON_FanSpeed)
+=======
+#define ICON_AdvSet               ICON_Language
+#define ICON_BedSizeX             ICON_PrintSize
+#define ICON_BedSizeY             ICON_PrintSize
+#define ICON_BedTramming          ICON_SetHome
+#define ICON_Binary               ICON_Contact
+#define ICON_BltouchReset         ICON_StockConfiguration
+#define ICON_Brightness           ICON_Motion
+#define ICON_Cancel               ICON_StockConfiguration
+#define ICON_CustomPreheat        ICON_SetEndTemp
+#define ICON_Error                ICON_TempTooHigh
+#define ICON_ESDiag               ICON_Info
+#define ICON_ExtrudeMinT          ICON_HotendTemp
+#define ICON_FilLoad              ICON_WriteEEPROM
+#define ICON_FilMan               ICON_ResumeEEPROM
+#define ICON_FilSet               ICON_ResumeEEPROM
+#define ICON_FilUnload            ICON_ReadEEPROM
+#define ICON_Flow                 ICON_StepE
+#define ICON_Folder               ICON_More
+#define ICON_FWRetract            ICON_StepE
+#define ICON_FWRetLength          ICON_StepE
+#define ICON_FWRetSpeed           ICON_Setspeed
+#define ICON_FWRetZRaise          ICON_MoveZ
+#define ICON_FWRecSpeed           ICON_Setspeed
+#define ICON_FWRecExtra           ICON_StepE
+#define ICON_HomeX                ICON_MoveX
+#define ICON_HomeY                ICON_MoveY
+#define ICON_HomeZ                ICON_MoveZ
+#define ICON_HomeOffset           ICON_AdvSet
+#define ICON_HomeOffsetX          ICON_StepX
+#define ICON_HomeOffsetY          ICON_StepY
+#define ICON_HomeOffsetZ          ICON_StepZ
+#define ICON_Host                 ICON_Contact
+#define ICON_HSMode               ICON_StockConfiguration
+#define ICON_InvertE0             ICON_StepE
+#define ICON_JDmm                 ICON_MaxJerk
+#define ICON_Tram                 ICON_SetEndTemp
+#define ICON_Level                ICON_HotendTemp
+#define ICON_Lock                 ICON_Cool
+#define ICON_ManualMesh           ICON_HotendTemp
+#define ICON_MaxPosX              ICON_MoveX
+#define ICON_MaxPosY              ICON_MoveY
+#define ICON_MaxPosZ              ICON_MoveZ
+#define ICON_MeshNext             ICON_Axis
+#define ICON_MeshPoints           ICON_SetEndTemp
+#define ICON_MeshSave             ICON_WriteEEPROM
+#define ICON_MeshViewer           ICON_HotendTemp
+#define ICON_MoveZ0               ICON_HotendTemp
+#define ICON_Park                 ICON_Motion
+#define ICON_ParkPos              ICON_AdvSet
+#define ICON_ParkPosX             ICON_StepX
+#define ICON_ParkPosY             ICON_StepY
+#define ICON_ParkPosZ             ICON_StepZ
+#define ICON_PhySet               ICON_PrintSize
+#define ICON_PIDbed               ICON_SetBedTemp
+#define ICON_PIDcycles            ICON_ResumeEEPROM
+#define ICON_PIDValue             ICON_Contact
+#define ICON_PrintStats           ICON_PrintTime
+#define ICON_PrintStatsReset      ICON_RemainTime
+#define ICON_ProbeDeploy          ICON_SetEndTemp
+#define ICON_ProbeMargin          ICON_PrintSize
+#define ICON_ProbeMultiple        ICON_SetHome
+#define ICON_ProbeOffsetX         ICON_StepX
+#define ICON_ProbeOffsetY         ICON_StepY
+#define ICON_ProbeOffsetZ         ICON_StepZ
+#define ICON_ProbeSet             ICON_SetEndTemp
+#define ICON_ProbeStow            ICON_SetEndTemp
+#define ICON_ProbeTest            ICON_SetEndTemp
+#define ICON_ProbeZSpeed          ICON_MaxSpeedZ
+#define ICON_Pwrlossr             ICON_Motion
+#define ICON_Reboot               ICON_ResumeEEPROM
+#define ICON_Runout               ICON_MaxAccE
+#define ICON_Scolor               ICON_MaxSpeed
+#define ICON_SetBaudRate          ICON_Setspeed
+#define ICON_SetCustomPreheat     ICON_SetEndTemp
+#define ICON_Sound                ICON_Cool
+#define ICON_TBSetup              ICON_Contact
+#define ICON_UBLActive            ICON_HotendTemp
+
+#define ICON_CaseLight            ICON_Motion
+#define ICON_LedControl           ICON_Motion
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 // Buttons
 #define BTN_Continue          85
@@ -298,6 +386,7 @@ namespace DWINUI {
     return t;
   }
 
+<<<<<<< HEAD
   // Draw an Icon and select library automatically
   //  BG: The icon background display: false=Background filtering is not displayed, true=Background display
   //  libID: Icon library ID
@@ -305,18 +394,28 @@ namespace DWINUI {
   //  x/y: Upper-left point
   void ICON_Show(bool BG, uint8_t icon, uint16_t x, uint16_t y);
 
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   // Draw an Icon with transparent background from the library ICON
   //  icon: Icon ID
   //  x/y: Upper-left point
   inline void Draw_Icon(uint8_t icon, uint16_t x, uint16_t y) {
+<<<<<<< HEAD
     ICON_Show(false, icon, x, y);
+=======
+    DWIN_ICON_Show(ICON, icon, x, y);
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   }
 
   // Draw an Icon from the library ICON with its background
   //  icon: Icon ID
   //  x/y: Upper-left point
   inline void Draw_IconWB(uint8_t icon, uint16_t x, uint16_t y) {
+<<<<<<< HEAD
     ICON_Show(true, icon, x, y);
+=======
+    DWIN_ICON_Show(true, false, false, ICON, icon, x, y);
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   }
 
   // Draw a numeric integer value

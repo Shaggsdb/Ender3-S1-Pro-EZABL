@@ -376,6 +376,7 @@ class FileTransferProtocol(object):
         token, data = self.await_response(1000)
         if token == 'PFT:success':
             print("File closed")
+<<<<<<< HEAD
             return True
         elif token == 'PFT:ioerror':
             print("Client storage device IO error")
@@ -383,6 +384,13 @@ class FileTransferProtocol(object):
         elif token == 'PFT:invalid':
             print("No open file")
             return False
+=======
+            return
+        elif token == 'PFT:ioerror':
+            print("Client storage device IO error")
+        elif token == 'PFT:invalid':
+            print("No open file")
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
     def abort(self):
         self.protocol.send(FileTransferProtocol.protocol_id, FileTransferProtocol.Packet.ABORT);
@@ -419,6 +427,7 @@ class FileTransferProtocol(object):
             self.write(data[start:end])
             kibs = (( (i+1) * block_size) / 1024) / (millis() + 1 - start_time) * 1000
             if (i / blocks) >= dump_pctg:
+<<<<<<< HEAD
                 print("\r{0:2.0f}% {1:4.2f}KiB/s {2} Errors: {3}".format((i / blocks) * 100, kibs, "[{0:4.2f}KiB/s]".format(kibs * cratio) if compression_support else "", self.protocol.errors), end='')
                 dump_pctg += 0.1
             if self.protocol.errors > 0:
@@ -436,6 +445,14 @@ class FileTransferProtocol(object):
             return False
         print("Transfer complete")
         return True
+=======
+                print("\r{0:2.2f}% {1:4.2f}KiB/s {2} Errors: {3}".format((i / blocks) * 100, kibs, "[{0:4.2f}KiB/s]".format(kibs * cratio) if compression_support else "", self.protocol.errors), end='')
+                dump_pctg += 0.1
+        print("\r{0:2.2f}% {1:4.2f}KiB/s {2} Errors: {3}".format(100, kibs, "[{0:4.2f}KiB/s]".format(kibs * cratio) if compression_support else "", self.protocol.errors)) # no one likes transfers finishing at 99.8%
+
+        self.close()
+        print("Transfer complete")
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 
 class EchoProtocol(object):

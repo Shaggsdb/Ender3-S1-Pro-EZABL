@@ -41,7 +41,11 @@
  * here we define this default string as the date where the latest release
  * version was tagged.
  */
+<<<<<<< HEAD
 //#define STRING_DISTRIBUTION_DATE "2022-08-08"
+=======
+//#define STRING_DISTRIBUTION_DATE "2022-07-15"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 #define STRING_DISTRIBUTION_DATE __DATE__
 #define STRING_DISTRIBUTION_TIME __TIME__

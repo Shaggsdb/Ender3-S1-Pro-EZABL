@@ -86,6 +86,7 @@
    *
    * Parameters:
    *
+<<<<<<< HEAD
    *   S[segments]          - Segments-per-second
    *
    * Without NO_WORKSPACE_OFFSETS:
@@ -93,6 +94,15 @@
    *   P[theta-psi-offset]  - Theta-Psi offset, added to the shoulder (A/X) angle
    *   T[theta-offset]      - Theta     offset, added to the elbow    (B/Y) angle
    *   Z[z-offset]          - Z offset, added to Z
+=======
+   *   S[segments-per-second] - Segments-per-second
+   *
+   * Without NO_WORKSPACE_OFFSETS:
+   *
+   *   P[theta-psi-offset]    - Theta-Psi offset, added to the shoulder (A/X) angle
+   *   T[theta-offset]        - Theta     offset, added to the elbow    (B/Y) angle
+   *   Z[z-offset]            - Z offset, added to Z
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
    *
    *   A, P, and X are all aliases for the shoulder angle
    *   B, T, and Y are all aliases for the elbow angle
@@ -152,6 +162,7 @@
    *
    * Parameters:
    *
+<<<<<<< HEAD
    *   S[segments]  - Segments-per-second
    *   L[left]      - Work area minimum X
    *   R[right]     - Work area maximum X
@@ -181,6 +192,20 @@
       SP_B_STR, LINEAR_UNIT(draw_area_min.y),
       PSTR(" H"), LINEAR_UNIT(polargraph_max_belt_len)
     );
+=======
+   *   S[segments-per-second] - Segments-per-second
+   */
+  void GcodeSuite::M665() {
+    if (parser.seenval('S'))
+      segments_per_second = parser.value_float();
+    else
+      M665_report();
+  }
+
+  void GcodeSuite::M665_report(const bool forReplay/*=true*/) {
+    report_heading_etc(forReplay, F(STR_POLARGRAPH_SETTINGS " (" STR_S_SEG_PER_SEC ")"));
+    SERIAL_ECHOLNPGM("  M665 S", segments_per_second);
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   }
 
 #endif

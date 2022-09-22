@@ -28,6 +28,10 @@
 
 #include "../gcode.h"
 #include "../../module/motion.h"
+<<<<<<< HEAD
+=======
+#include "../../module/stepper.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #include "../../module/tool_change.h"
 #include "../../module/planner.h"
 

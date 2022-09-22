@@ -249,7 +249,10 @@ namespace Language_sv {
   LSTR MSG_MOVE_X                         = _UxGT("Flytta X");
   LSTR MSG_MOVE_Y                         = _UxGT("Flytta Y");
   LSTR MSG_MOVE_Z                         = _UxGT("Flytta Z");
+<<<<<<< HEAD
   LSTR MSG_MOVE_N                         = _UxGT("Flytta @");
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   LSTR MSG_MOVE_E                         = _UxGT("Extruder");
   LSTR MSG_MOVE_EN                        = _UxGT("Extruder *");
   LSTR MSG_HOTEND_TOO_COLD                = _UxGT("Hetände för kall");

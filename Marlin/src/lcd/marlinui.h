@@ -176,8 +176,11 @@ typedef bool (*statusResetFunc_t)();
     static void soon(const AxisEnum axis OPTARG(MULTI_E_MANUAL, const int8_t eindex=active_extruder));
   };
 
+<<<<<<< HEAD
   void lcd_move_axis(const AxisEnum);
 
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 #endif
 
 ////////////////////////////////////////////
@@ -225,12 +228,21 @@ public:
     static constexpr bool sound_on = true;
   #endif
 
+<<<<<<< HEAD
   #if USE_MARLINUI_BUZZER
     static void buzz(const long duration, const uint16_t freq);
   #endif
 
   static void chirp() {
     TERN_(HAS_CHIRP, TERN(USE_MARLINUI_BUZZER, buzz, BUZZ)(LCD_FEEDBACK_FREQUENCY_DURATION_MS, LCD_FEEDBACK_FREQUENCY_HZ));
+=======
+  #if HAS_BUZZER
+    static void buzz(const long duration, const uint16_t freq);
+  #endif
+
+  FORCE_INLINE static void chirp() {
+    TERN_(HAS_CHIRP, TERN(HAS_BUZZER, buzz, BUZZ)(LCD_FEEDBACK_FREQUENCY_DURATION_MS, LCD_FEEDBACK_FREQUENCY_HZ));
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   }
 
   #if ENABLED(LCD_HAS_STATUS_INDICATORS)
@@ -453,7 +465,11 @@ public:
       #endif
 
       static void quick_feedback(const bool clear_buttons=true);
+<<<<<<< HEAD
       #if HAS_SOUND
+=======
+      #if HAS_BUZZER
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
         static void completion_feedback(const bool good=true);
       #else
         static void completion_feedback(const bool=true) { TERN_(HAS_TOUCH_SLEEP, wakeup_screen()); }
@@ -692,7 +708,15 @@ public:
 
     static void update_buttons();
 
+<<<<<<< HEAD
     #if ENABLED(ENCODER_NOISE_FILTER)
+=======
+    #if HAS_ENCODER_NOISE
+      #ifndef ENCODER_SAMPLES
+        #define ENCODER_SAMPLES 10
+      #endif
+
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
       /**
        * Some printers may have issues with EMI noise especially using a motherboard with 3.3V logic levels
        * it may cause the logical LOW to float into the undefined region and register as a logical HIGH

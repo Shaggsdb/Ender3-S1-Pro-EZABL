@@ -51,7 +51,11 @@ void safe_delay(millis_t ms) {
 
   #include "../module/probe.h"
   #include "../module/motion.h"
+<<<<<<< HEAD
   #include "../module/planner.h"
+=======
+  #include "../module/stepper.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   #include "../libs/numtostr.h"
   #include "../feature/bedlevel/bedlevel.h"
 
@@ -70,7 +74,10 @@ void safe_delay(millis_t ms) {
       TERN_(NOZZLE_AS_PROBE, "NOZZLE_AS_PROBE")
       TERN_(FIX_MOUNTED_PROBE, "FIX_MOUNTED_PROBE")
       TERN_(HAS_Z_SERVO_PROBE, TERN(BLTOUCH, "BLTOUCH", "SERVO PROBE"))
+<<<<<<< HEAD
       TERN_(BD_SENSOR, "BD_SENSOR")
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
       TERN_(TOUCH_MI_PROBE, "TOUCH_MI_PROBE")
       TERN_(Z_PROBE_SLED, "Z_PROBE_SLED")
       TERN_(Z_PROBE_ALLEN_KEY, "Z_PROBE_ALLEN_KEY")

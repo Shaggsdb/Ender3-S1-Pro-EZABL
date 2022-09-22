@@ -7,14 +7,25 @@
 #
 import pioutil
 if pioutil.is_pio_build():
+<<<<<<< HEAD
 	import shutil,marlin
 	from pathlib import Path
+=======
+	import os,shutil,marlin
+	from SCons.Script import DefaultEnvironment
+	from platformio import util
+
+	env = DefaultEnvironment()
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 	#
 	# Get the platform name from the 'platform_packages' option,
 	# or look it up by the platform.class.name.
 	#
+<<<<<<< HEAD
 	env = marlin.env
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 	platform = env.PioPlatform()
 
 	from platformio.package.meta import PackageSpec
@@ -35,8 +46,13 @@ if pioutil.is_pio_build():
 	if platform_name in [ "usb-host-msc", "usb-host-msc-cdc-msc", "usb-host-msc-cdc-msc-2", "usb-host-msc-cdc-msc-3", "tool-stm32duino", "biqu-bx-workaround", "main" ]:
 		platform_name = "framework-arduinoststm32"
 
+<<<<<<< HEAD
 	FRAMEWORK_DIR = Path(platform.get_package_dir(platform_name))
 	assert FRAMEWORK_DIR.is_dir()
+=======
+	FRAMEWORK_DIR = platform.get_package_dir(platform_name)
+	assert os.path.isdir(FRAMEWORK_DIR)
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 	board = env.BoardConfig()
 
@@ -45,6 +61,7 @@ if pioutil.is_pio_build():
 	#series = mcu_type[:7].upper() + "xx"
 
 	# Prepare a new empty folder at the destination
+<<<<<<< HEAD
 	variant_dir = FRAMEWORK_DIR / "variants" / variant
 	if variant_dir.is_dir():
 		shutil.rmtree(variant_dir)
@@ -54,5 +71,16 @@ if pioutil.is_pio_build():
 	# Source dir is a local variant sub-folder
 	source_dir = Path("buildroot/share/PlatformIO/variants", variant)
 	assert source_dir.is_dir()
+=======
+	variant_dir = os.path.join(FRAMEWORK_DIR, "variants", variant)
+	if os.path.isdir(variant_dir):
+		shutil.rmtree(variant_dir)
+	if not os.path.isdir(variant_dir):
+		os.mkdir(variant_dir)
+
+	# Source dir is a local variant sub-folder
+	source_dir = os.path.join("buildroot/share/PlatformIO/variants", variant)
+	assert os.path.isdir(source_dir)
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 	marlin.copytree(source_dir, variant_dir)

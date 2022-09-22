@@ -26,6 +26,10 @@
 
 #include "../../gcode.h"
 #include "../../../module/planner.h"
+<<<<<<< HEAD
+=======
+#include "../../../module/stepper.h"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
 
 #if ENABLED(EXTRA_LIN_ADVANCE_K)
   float other_extruder_advance_K[EXTRUDERS];

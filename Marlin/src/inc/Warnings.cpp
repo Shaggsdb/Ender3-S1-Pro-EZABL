@@ -763,7 +763,11 @@
 /**
  * Maple environment
  */
+<<<<<<< HEAD
 #ifdef __STM32F1__ && DISABLED(NO_MAPLE_WARNING)
+=======
+#ifdef __STM32F1__
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   #warning "Maple build environments are deprecated. Please use a non-Maple build environment. Report issues to the Marlin Firmware project."
 #endif
 
@@ -773,6 +777,7 @@
 #if MB(BTT_BTT002_V1_0, EINSY_RAMBO) && DISABLED(NO_MK3_FAN_PINS_WARNING)
   #warning "Define MK3_FAN_PINS to swap hotend and part cooling fan pins. (Define NO_MK3_FAN_PINS_WARNING to suppress this warning.)"
 #endif
+<<<<<<< HEAD
 
 /**
  * BD Sensor should always include BABYSTEPPING
@@ -780,3 +785,5 @@
 #if ENABLED(BD_SENSOR) && DISABLED(BABYSTEPPING)
   #warning "BABYSTEPPING is recommended with BD_SENSOR."
 #endif
+=======
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436

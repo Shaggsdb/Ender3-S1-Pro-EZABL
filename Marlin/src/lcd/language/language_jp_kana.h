@@ -92,9 +92,13 @@ namespace Language_jp_kana {
   LSTR MSG_MOVE_X                         = _UxGT("Xジク イドウ");                  // "Move X"
   LSTR MSG_MOVE_Y                         = _UxGT("Yジク イドウ");                  // "Move Y"
   LSTR MSG_MOVE_Z                         = _UxGT("Zジク イドウ");                  // "Move Z"
+<<<<<<< HEAD
   LSTR MSG_MOVE_N                         = _UxGT("@ジク イドウ");                  // "Move @"
   LSTR MSG_MOVE_E                         = _UxGT("エクストルーダー");                // "Extruder"
   LSTR MSG_MOVE_EN                        = _UxGT("* エクストルーダー");              // "En"
+=======
+  LSTR MSG_MOVE_E                         = _UxGT("エクストルーダー");                // "Extruder"
+>>>>>>> af308590f4efa68068226d4f6b05924d56f02436
   LSTR MSG_MOVE_N_MM                      = _UxGT("$mm イドウ");                    // "Move 0.025mm"
   LSTR MSG_MOVE_01MM                      = _UxGT("0.1mm イドウ");                 // "Move 0.1mm"
   LSTR MSG_MOVE_1MM                       = _UxGT("  1mm イドウ");                 // "Move 1mm"
